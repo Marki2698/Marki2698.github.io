@@ -1,0 +1,9 @@
+$red-bg: red;
+@mixin bodyBG($color) {
+    background-color: $color; 
+}
+
+
+body {
+    @include bodyBG($red-bg);
+}
