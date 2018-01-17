@@ -19,7 +19,7 @@ class Knowledge extends React.Component {
                 <ul>
                     {
                         this.technology.map((val, i) => {
-                            
+                            //this.technology
                         })
                     }
                 </ul>

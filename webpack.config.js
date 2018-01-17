@@ -31,7 +31,7 @@ let config = {
 };
 
 let jsOutput = Object.assign({}, config, {
-    entry: "./js/main.js",
+    entry: "./js/main.jsx",
     output: {
         path: path.resolve(__dirname, "dist/js"),
         filename: "main.js"
