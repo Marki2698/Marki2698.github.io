@@ -7,29 +7,37 @@ import Description from "../components/description.jsx";
 
 class Knowledge extends React.Component {
     constructor(props) {
-        this.technology = this.props.technology;
-        this.index = 1;
         super(props);
+        this.technology = this.props.technology;
+        //this.index = 1;
     }
-
+    
+    ShowDesc(e) {
+        if(e.target.tagname === "IMG") {
+            e.target.nextElementSibling.classList.toggle("hidden");
+        } else if(e.target.tagname === "P") {
+            e.target.classList.toggle("hidden");
+        }
+    }
 
     render() {
         return(
             <section className="knowledge">
-                <ul>
                     {
                         this.technology.map((val, i) => {
-                            //this.technology
+                            <div key={i} className="technology" >
+                                <Image key={i} onMouseOver={(e) => this.ShowDesc(e)} src={val.src} alt={val.alt}/>
+                                <Description key={i} onMouseOver={(e) => this.ShowDesc(e)} desc={val.desc}/>
+                            </div>
                         })
                     }
-                </ul>
             </section>
         );
     }
 }
 
 Knowledge.propTypes = {
-    technology: PropTypes.arrayOf(object)
+    technology: PropTypes.array
 };
 
 export default Knowledge;

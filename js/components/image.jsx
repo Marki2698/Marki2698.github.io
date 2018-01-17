@@ -1,16 +1,16 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-const image = ({src, alt}) => <img className="image" src={src} alt={alt}/>;
+const Image = ({src, alt}) => <img className="image" src={src} alt={alt}/>;
 
-image.propTypes = {
+Image.propTypes = {
     src: PropTypes.string,
     alt: PropTypes.string
 };
 
-image.defaultProps = {
+Image.defaultProps = {
     src: "images/semi.jpeg",
     alt: "default image"
 };
 
-export default image;
+export default Image;

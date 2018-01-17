@@ -3,11 +3,11 @@ import PropTypes from "prop-types";
 
 const Description = ({desc}) => <p className="desc">{desc}</p>;
 
-MainPhoto.propTypes = {
+Description.propTypes = {
     desc: PropTypes.string
 };
 
-MainPhoto.defaultProps = {
+Description.defaultProps = {
     desc: "Description of my personality"
 };
 

@@ -10,16 +10,16 @@ const Portfolio = ({projects}) => <section className="portfolio">
     {
         projects.map((val, i) => {
             <div key={i} className="project">
-                <Image src={val.src} alt={val.alt} />
-                <Anchor href={val.href} label={val.label} />
-                <Description desc={val.desc} />
+                <Image key={i} src={val.src} alt={val.alt} />
+                <Anchor key={i} href={val.href} label={val.label} />
+                <Description key={i} desc={val.desc} />
             </div>
         })
     }
 </section>;
 
 Portfolio.propTypes = {
-    projects: PropTypes.arrayOf(object)
+    projects: PropTypes.array
 };
 
 Portfolio.defaultProps = {

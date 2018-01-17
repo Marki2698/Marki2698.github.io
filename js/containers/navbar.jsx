@@ -4,8 +4,8 @@ import Item from "../components/item.jsx";
 
 class Navbar extends React.Component {
     constructor(props) {
-        this.topics = this.props.topics;
         super(props);
+        this.topics = this.props.topics;
     }
 
     GoTo(e) {
@@ -17,17 +17,17 @@ class Navbar extends React.Component {
         return(
             <div className="nav-bar">
                 {
-                    this.topics.map((i, topic) => {
+                    this.topics.map((topic, i) => {
                         <Item key={i} href={topic} onClick={(e) => this.GoTo(e)}/> 
                     })
                 }
             </div>
-        );
+        )
     }    
 };
 
 Navbar.propTypes = {
-    topics: PropTypes.arrayOf(string)
+    topics: PropTypes.array
 };
 
 Navbar.defaultProps = {
