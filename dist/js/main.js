@@ -367,17 +367,22 @@ var _propTypes2 = _interopRequireDefault(_propTypes);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var Image = function Image(_ref) {
-    var src = _ref.src,
+    var listener = _ref.listener,
+        src = _ref.src,
         alt = _ref.alt;
-    return _react2.default.createElement("img", { className: "image", src: src, alt: alt });
+    return _react2.default.createElement("img", { onMouseOver: typeof listener === "string" ? function () {
+            return false;
+        } : listener(), className: "image", src: src, alt: alt });
 };
 
 Image.propTypes = {
+    listener: _propTypes2.default.any,
     src: _propTypes2.default.string,
     alt: _propTypes2.default.string
 };
 
 Image.defaultProps = {
+    listener: "",
     src: "images/semi.jpeg",
     alt: "default image"
 };
@@ -639,46 +644,6 @@ module.exports = warning;
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
-var _react = __webpack_require__(0);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _propTypes = __webpack_require__(2);
-
-var _propTypes2 = _interopRequireDefault(_propTypes);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var Description = function Description(_ref) {
-    var desc = _ref.desc;
-    return _react2.default.createElement(
-        "p",
-        { className: "desc" },
-        desc
-    );
-};
-
-Description.propTypes = {
-    desc: _propTypes2.default.string
-};
-
-Description.defaultProps = {
-    desc: "Description of my personality"
-};
-
-exports.default = Description;
-
-/***/ }),
-/* 10 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
 /* WEBPACK VAR INJECTION */(function(process) {/**
  * Copyright (c) 2013-present, Facebook, Inc.
  *
@@ -691,7 +656,7 @@ exports.default = Description;
 if (process.env.NODE_ENV !== 'production') {
   var invariant = __webpack_require__(6);
   var warning = __webpack_require__(8);
-  var ReactPropTypesSecret = __webpack_require__(11);
+  var ReactPropTypesSecret = __webpack_require__(10);
   var loggedTypeFailures = {};
 }
 
@@ -742,7 +707,7 @@ module.exports = checkPropTypes;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ }),
-/* 11 */
+/* 10 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -759,6 +724,54 @@ var ReactPropTypesSecret = 'SECRET_DO_NOT_PASS_THIS_OR_YOU_WILL_BE_FIRED';
 
 module.exports = ReactPropTypesSecret;
 
+
+/***/ }),
+/* 11 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _propTypes = __webpack_require__(2);
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var Description = function Description(_ref) {
+    var listener = _ref.listener,
+        classname = _ref.classname,
+        desc = _ref.desc;
+    return _react2.default.createElement(
+        "p",
+        { onMouseOver: typeof listener === "string" ? function () {
+                return false;
+            } : listener(), className: "desc " + classname },
+        desc
+    );
+};
+
+Description.propTypes = {
+    listener: _propTypes2.default.any,
+    classname: _propTypes2.default.string,
+    desc: _propTypes2.default.string
+};
+
+Description.defaultProps = {
+    listener: "",
+    classname: "",
+    desc: "Description of my personality"
+};
+
+exports.default = Description;
 
 /***/ }),
 /* 12 */
@@ -1092,7 +1105,7 @@ var Anchor = function Anchor(_ref) {
         label = _ref.label;
     return _react2.default.createElement(
         "a",
-        { href: href, className: "anchor-portfolio" },
+        { href: href, className: "anchor" },
         label
     );
 };
@@ -1231,7 +1244,7 @@ var emptyObject = __webpack_require__(7);
 var invariant = __webpack_require__(6);
 var warning = __webpack_require__(8);
 var emptyFunction = __webpack_require__(3);
-var checkPropTypes = __webpack_require__(10);
+var checkPropTypes = __webpack_require__(9);
 
 // TODO: this is special because it gets imported during build.
 
@@ -2941,7 +2954,7 @@ var shallowEqual = __webpack_require__(15);
 var containsNode = __webpack_require__(16);
 var focusNode = __webpack_require__(17);
 var emptyObject = __webpack_require__(7);
-var checkPropTypes = __webpack_require__(10);
+var checkPropTypes = __webpack_require__(9);
 var hyphenateStyleName = __webpack_require__(27);
 var camelizeStyleName = __webpack_require__(29);
 
@@ -18525,7 +18538,7 @@ var Navbar = function (_React$Component) {
                 "div",
                 { className: "nav-bar" },
                 this.topics.map(function (topic, i) {
-                    _react2.default.createElement(_item2.default, { key: i, href: topic, onClick: function onClick(e) {
+                    return _react2.default.createElement(_item2.default, { key: i, href: topic, click: function click(e) {
                             return _this2.GoTo(e);
                         } });
                 })
@@ -18538,8 +18551,21 @@ var Navbar = function (_React$Component) {
 
 ;
 
+/* function GoTo(e) {
+    e.preventDefault();
+    alert(e.target.innerHTML);
+}
+
+const Navbar = ({topics}) => <div className="nav-bar">
+    { 
+        topics.map((topic, i) => 
+            <Item key={i} href={topic} onClick={(e) => GoTo(e)} /> 
+        )
+    }
+</div>; */
+
 Navbar.propTypes = {
-    topics: _propTypes2.default.array
+    topics: _propTypes2.default.arrayOf(_propTypes2.default.string)
 };
 
 Navbar.defaultProps = {
@@ -18567,8 +18593,8 @@ var invariant = __webpack_require__(6);
 var warning = __webpack_require__(8);
 var assign = __webpack_require__(5);
 
-var ReactPropTypesSecret = __webpack_require__(11);
-var checkPropTypes = __webpack_require__(10);
+var ReactPropTypesSecret = __webpack_require__(10);
+var checkPropTypes = __webpack_require__(9);
 
 module.exports = function(isValidElement, throwOnDirectAccess) {
   /* global Symbol */
@@ -19114,7 +19140,7 @@ module.exports = function(isValidElement, throwOnDirectAccess) {
 
 var emptyFunction = __webpack_require__(3);
 var invariant = __webpack_require__(6);
-var ReactPropTypesSecret = __webpack_require__(11);
+var ReactPropTypesSecret = __webpack_require__(10);
 
 module.exports = function() {
   function shim(props, propName, componentName, location, propFullName, secret) {
@@ -19187,10 +19213,11 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 //let topics = ["Marki2698", "About me", "What I know", "What I've made", "Contact with me"];
 
 var Item = function Item(_ref) {
-    var href = _ref.href;
+    var href = _ref.href,
+        click = _ref.click;
     return _react2.default.createElement(
         "a",
-        { href: "#" + href, className: "navbar-item" },
+        { href: "#" + href, className: "navbar-item", onClick: click },
         " ",
         href,
         " "
@@ -19198,7 +19225,8 @@ var Item = function Item(_ref) {
 };
 
 Item.propTypes = {
-    href: _propTypes2.default.string
+    href: _propTypes2.default.string,
+    click: _propTypes2.default.func
 };
 
 Item.defaultProps = {
@@ -19278,7 +19306,7 @@ var _image = __webpack_require__(4);
 
 var _image2 = _interopRequireDefault(_image);
 
-var _description = __webpack_require__(9);
+var _description = __webpack_require__(11);
 
 var _description2 = _interopRequireDefault(_description);
 
@@ -19335,7 +19363,7 @@ var _image = __webpack_require__(4);
 
 var _image2 = _interopRequireDefault(_image);
 
-var _description = __webpack_require__(9);
+var _description = __webpack_require__(11);
 
 var _description2 = _interopRequireDefault(_description);
 
@@ -19365,11 +19393,18 @@ var Knowledge = function (_React$Component) {
     _createClass(Knowledge, [{
         key: "ShowDesc",
         value: function ShowDesc(e) {
-            if (e.target.tagname === "IMG") {
+            /* if(e.target.tagname === "IMG") {
                 e.target.nextElementSibling.classList.toggle("hidden");
-            } else if (e.target.tagname === "P") {
+            } else if(e.target.tagname === "P") {
                 e.target.classList.toggle("hidden");
-            }
+            } */
+            return function (e) {
+                if (e.target.tagname === "IMG") {
+                    e.target.nextElementSibling.classList.toggle("hidden");
+                } else if (e.target.tagname === "P") {
+                    e.target.classList.toggle("hidden");
+                }
+            };
         }
     }, {
         key: "render",
@@ -19380,15 +19415,15 @@ var Knowledge = function (_React$Component) {
                 "section",
                 { className: "knowledge" },
                 this.technology.map(function (val, i) {
-                    _react2.default.createElement(
+                    return _react2.default.createElement(
                         "div",
                         { key: i, className: "technology" },
-                        _react2.default.createElement(_image2.default, { key: i, onMouseOver: function onMouseOver(e) {
+                        _react2.default.createElement(_image2.default, { listener: function listener(e) {
                                 return _this2.ShowDesc(e);
                             }, src: val.src, alt: val.alt }),
-                        _react2.default.createElement(_description2.default, { key: i, onMouseOver: function onMouseOver(e) {
+                        _react2.default.createElement(_description2.default, { listener: function listener(e) {
                                 return _this2.ShowDesc(e);
-                            }, desc: val.desc })
+                            }, classname: "hidden", desc: val.desc })
                     );
                 })
             );
@@ -19399,7 +19434,7 @@ var Knowledge = function (_React$Component) {
 }(_react2.default.Component);
 
 Knowledge.propTypes = {
-    technology: _propTypes2.default.array
+    technology: _propTypes2.default.arrayOf(_propTypes2.default.object)
 };
 
 exports.default = Knowledge;
@@ -19427,7 +19462,7 @@ var _image = __webpack_require__(4);
 
 var _image2 = _interopRequireDefault(_image);
 
-var _description = __webpack_require__(9);
+var _description = __webpack_require__(11);
 
 var _description2 = _interopRequireDefault(_description);
 
@@ -19445,12 +19480,12 @@ var Portfolio = function Portfolio(_ref) {
         "section",
         { className: "portfolio" },
         projects.map(function (val, i) {
-            _react2.default.createElement(
+            return _react2.default.createElement(
                 "div",
                 { key: i, className: "project" },
-                _react2.default.createElement(_image2.default, { key: i, src: val.src, alt: val.alt }),
-                _react2.default.createElement(_anchor2.default, { key: i, href: val.href, label: val.label }),
-                _react2.default.createElement(_description2.default, { key: i, desc: val.desc })
+                _react2.default.createElement(_image2.default, { src: val.src, alt: val.alt }),
+                _react2.default.createElement(_anchor2.default, { href: val.href, label: val.label }),
+                _react2.default.createElement(_description2.default, { desc: val.desc })
             );
         })
     );
@@ -19497,7 +19532,7 @@ var Footer = function Footer(_ref) {
         "footer",
         { className: "contacts" },
         contacts.map(function (val, i) {
-            _react2.default.createElement(_contact2.default, { key: i, src: val.src, alt: val.alt, href: val.href, desc: val.desc });
+            return _react2.default.createElement(_contact2.default, { key: i, src: val.src, alt: val.alt, href: val.href, desc: val.desc });
         })
     );
 };
@@ -19542,11 +19577,9 @@ var _image = __webpack_require__(4);
 
 var _image2 = _interopRequireDefault(_image);
 
-var _description = __webpack_require__(9);
-
-var _description2 = _interopRequireDefault(_description);
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+//import Decsription from "../components/description.jsx";
 
 var Contact = function Contact(_ref) {
     var src = _ref.src,

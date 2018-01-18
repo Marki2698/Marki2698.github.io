@@ -16,18 +16,29 @@ class Navbar extends React.Component {
     render() {
         return(
             <div className="nav-bar">
-                {
-                    this.topics.map((topic, i) => {
-                        <Item key={i} href={topic} onClick={(e) => this.GoTo(e)}/> 
-                    })
-                }
+                    {
+                        this.topics.map((topic, i) => <Item key={i} href={topic} click={(e) => this.GoTo(e)}/> )
+                    }
             </div>
         )
     }    
 };
 
+/* function GoTo(e) {
+    e.preventDefault();
+    alert(e.target.innerHTML);
+}
+
+const Navbar = ({topics}) => <div className="nav-bar">
+    { 
+        topics.map((topic, i) => 
+            <Item key={i} href={topic} onClick={(e) => GoTo(e)} /> 
+        )
+    }
+</div>; */
+
 Navbar.propTypes = {
-    topics: PropTypes.array
+    topics: PropTypes.arrayOf(PropTypes.string)
 };
 
 Navbar.defaultProps = {

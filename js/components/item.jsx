@@ -3,10 +3,11 @@ import PropTypes from "prop-types";
 
 //let topics = ["Marki2698", "About me", "What I know", "What I've made", "Contact with me"];
 
-const Item = ({href}) => <a href={"#" + href} className="navbar-item"> {href} </a>;
+const Item = ({href, click}) => <a href={"#" + href} className="navbar-item" onClick={click}> {href} </a>;
 
 Item.propTypes = {
-    href: PropTypes.string
+    href: PropTypes.string,
+    click: PropTypes.func
 };
 
 Item.defaultProps = {

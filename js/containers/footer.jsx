@@ -5,9 +5,9 @@ import Contact from "../components/contact.jsx";
 
 const Footer = ({contacts}) => <footer className="contacts">
     {
-        contacts.map((val, i) => {
+        contacts.map((val, i) => 
             <Contact key={i} src={val.src} alt={val.alt} href={val.href} desc={val.desc} />
-        })
+        )
     }
 </footer>;
 

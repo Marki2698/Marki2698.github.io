@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-const Anchor = ({href, label}) => <a href={href} className="anchor-portfolio">{label}</a>;
+const Anchor = ({href, label}) => <a href={href} className="anchor">{label}</a>;
 
 Anchor.propTypes = {
     href: PropTypes.string,

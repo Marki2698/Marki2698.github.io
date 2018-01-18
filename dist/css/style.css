@@ -1,4 +1,10 @@
 body {
   background-color: red; }
 
+.desc {
+  display: block; }
+
+.hidden {
+  display: none; }
+
 /*# sourceMappingURL=style.css.map*/

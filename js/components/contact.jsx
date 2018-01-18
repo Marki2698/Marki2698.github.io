@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import Anchor from "../components/anchor.jsx";
 import Image from "../components/image.jsx";
-import Decsription from "../components/description.jsx";
+//import Decsription from "../components/description.jsx";
 
 const Contact = ({src, alt, href, desc}) => <div className="contact">
     <Image src={src} alt={alt} />

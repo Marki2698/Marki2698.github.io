@@ -13,10 +13,17 @@ class Knowledge extends React.Component {
     }
     
     ShowDesc(e) {
-        if(e.target.tagname === "IMG") {
+        /* if(e.target.tagname === "IMG") {
             e.target.nextElementSibling.classList.toggle("hidden");
         } else if(e.target.tagname === "P") {
             e.target.classList.toggle("hidden");
+        } */
+        return (e) => {
+            if(e.target.tagname === "IMG") {
+                e.target.nextElementSibling.classList.toggle("hidden");
+            } else if(e.target.tagname === "P") {
+                e.target.classList.toggle("hidden");
+            }
         }
     }
 
@@ -24,12 +31,12 @@ class Knowledge extends React.Component {
         return(
             <section className="knowledge">
                     {
-                        this.technology.map((val, i) => {
+                        this.technology.map((val, i) => 
                             <div key={i} className="technology" >
-                                <Image key={i} onMouseOver={(e) => this.ShowDesc(e)} src={val.src} alt={val.alt}/>
-                                <Description key={i} onMouseOver={(e) => this.ShowDesc(e)} desc={val.desc}/>
+                                <Image  listener={(e) => this.ShowDesc(e)} src={val.src} alt={val.alt}/>
+                                <Description listener={(e) => this.ShowDesc(e)} classname={"hidden"} desc={val.desc}/>
                             </div>
-                        })
+                        )
                     }
             </section>
         );
@@ -37,7 +44,7 @@ class Knowledge extends React.Component {
 }
 
 Knowledge.propTypes = {
-    technology: PropTypes.array
+    technology: PropTypes.arrayOf(PropTypes.object)
 };
 
 export default Knowledge;
