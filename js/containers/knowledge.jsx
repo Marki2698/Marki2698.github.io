@@ -18,10 +18,10 @@ class Knowledge extends React.Component {
         } else if(e.target.tagname === "P") {
             e.target.classList.toggle("hidden");
         } */
-        return (e) => {
-            if(e.target.tagname === "IMG") {
+        return function(e) {
+            if(e.target.tagName.toLowerCase() === "img") {
                 e.target.nextElementSibling.classList.toggle("hidden");
-            } else if(e.target.tagname === "P") {
+            } else if(e.target.tagName.toLowerCase() === "p") {
                 e.target.classList.toggle("hidden");
             }
         }
@@ -33,7 +33,7 @@ class Knowledge extends React.Component {
                     {
                         this.technology.map((val, i) => 
                             <div key={i} className="technology" >
-                                <Image  listener={(e) => this.ShowDesc(e)} src={val.src} alt={val.alt}/>
+                                <Image listener={(e) => this.ShowDesc(e)} src={val.src} alt={val.alt}/>
                                 <Description listener={(e) => this.ShowDesc(e)} classname={"hidden"} desc={val.desc}/>
                             </div>
                         )

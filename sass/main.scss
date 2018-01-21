@@ -1,17 +1,2 @@
-$red-bg: red;
-@mixin bodyBG($color) {
-    background-color: $color; 
-}
-
-
-body {
-    @include bodyBG($red-bg);
-}
-
-.desc {
-    display: block;
-}
-
-.hidden {
-    display: none;
-}
+@import "../node_modules/bootstrap/scss/bootstrap.scss";
+@import "./custom/custom.scss";

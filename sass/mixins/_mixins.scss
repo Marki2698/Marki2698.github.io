@@ -1,0 +1,8 @@
+@mixin bodyBG($color) {
+    background-color: $color; 
+}
+
+@mixin hoverBgAndColor($bg, $color, $dur) {
+    background-color:$bg;
+    color: $color;
+}

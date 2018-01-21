@@ -15,7 +15,7 @@ class Navbar extends React.Component {
 
     render() {
         return(
-            <div className="nav-bar">
+            <div className="navbar custom-navbar">
                     {
                         this.topics.map((topic, i) => <Item key={i} href={topic} click={(e) => this.GoTo(e)}/> )
                     }

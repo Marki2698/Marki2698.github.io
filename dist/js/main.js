@@ -367,13 +367,36 @@ var _propTypes2 = _interopRequireDefault(_propTypes);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var Image = function Image(_ref) {
-    var listener = _ref.listener,
+    var _ref$listener = _ref.listener,
+        listener = _ref$listener === undefined ? "" : _ref$listener,
         src = _ref.src,
         alt = _ref.alt;
-    return _react2.default.createElement("img", { onMouseOver: typeof listener === "string" ? function () {
+    return _react2.default.createElement("img", { onClick: typeof listener === "string" ? function () {
             return false;
         } : listener(), className: "image", src: src, alt: alt });
 };
+
+/* class Image extends React.Component {
+    constructor(props) {
+        super(props);
+        this.props = props;
+        this.AddListener = this.AddListener.bind(this);
+    }
+
+    AddListener(e) {
+        if(typeof this.props.listener === "string") {
+            return false;
+        } else if(typeof this.props.listener === "function") {
+             return this.props.listener(e);
+        }
+    }
+
+    render() {
+        return(
+            <img onMouseOver={(e) => this.AddListener(e)} className={"image"} src={this.props.src} alt={this.props.alt}/>
+        )
+    }
+} */
 
 Image.propTypes = {
     listener: _propTypes2.default.any,
@@ -752,12 +775,34 @@ var Description = function Description(_ref) {
         desc = _ref.desc;
     return _react2.default.createElement(
         "p",
-        { onMouseOver: typeof listener === "string" ? function () {
+        { onClick: typeof listener === "string" ? function () {
                 return false;
             } : listener(), className: "desc " + classname },
         desc
     );
 };
+
+/* class Description extends React.Component {
+    constructor(props) {
+        super(props);
+        this.props = props;
+        this.AddListener = this.AddListener.bind(this);
+    }
+
+    AddListener(e) {
+        if(typeof this.props.listener === "string") {
+            return false;
+        } else if(typeof this.props.listener === "function") {
+             return this.props.listener(e);
+        }
+    }
+
+    render() {
+        return(
+            <p onMouseOver={(e) => this.AddListener(e)} className={"desc " + this.props.classname}>{this.props.desc}</p>
+        )
+    }
+} */
 
 Description.propTypes = {
     listener: _propTypes2.default.any,
@@ -18536,7 +18581,7 @@ var Navbar = function (_React$Component) {
 
             return _react2.default.createElement(
                 "div",
-                { className: "nav-bar" },
+                { className: "navbar custom-navbar" },
                 this.topics.map(function (topic, i) {
                     return _react2.default.createElement(_item2.default, { key: i, href: topic, click: function click(e) {
                             return _this2.GoTo(e);
@@ -19399,9 +19444,9 @@ var Knowledge = function (_React$Component) {
                 e.target.classList.toggle("hidden");
             } */
             return function (e) {
-                if (e.target.tagname === "IMG") {
+                if (e.target.tagName.toLowerCase() === "img") {
                     e.target.nextElementSibling.classList.toggle("hidden");
-                } else if (e.target.tagname === "P") {
+                } else if (e.target.tagName.toLowerCase() === "p") {
                     e.target.classList.toggle("hidden");
                 }
             };

@@ -1,0 +1,24 @@
+@import "../variables/_variables.scss";
+@import "../mixins/_mixins.scss";
+
+body {
+    @include bodyBG($bg);
+}
+
+.main-photo, .about {
+    position: relative;
+    width: 100%;
+}
+
+.image {
+    position: relative;
+    width: 100%;
+}
+
+.desc {
+    display: block;
+}
+
+.hidden {
+    display: none;
+}

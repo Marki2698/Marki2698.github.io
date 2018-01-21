@@ -1,0 +1,23 @@
+@import "../variables/_variables.scss";
+@import "../mixins/_mixins.scss";
+
+.custom-navbar {
+    background-color: $navbar-bg;
+    justify-content: space-around;
+    padding: 0;
+    text-align: center;
+}
+
+.custom-navbar .navbar-item {
+    position: relative;
+    width: 20%;
+    padding: 20px 0px;
+    text-decoration-style: none;
+    color: $hover-color;
+    transition: background-color $duration, color $duration;
+}
+
+.custom-navbar .navbar-item:hover {
+    background-color: $hover-bg;
+    color: $hover-color;
+}
