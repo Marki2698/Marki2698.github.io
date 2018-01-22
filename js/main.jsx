@@ -7,6 +7,7 @@ import Knowledge from "./containers/knowledge.jsx";
 import Portfolio from "./containers/portfolio.jsx";
 import Footer from "./containers/footer.jsx";
 import Up from "./containers/up.jsx";
+import Scripts from "./components/scripts.jsx";
 import contacts from "./contacts.js";
 import projects from "./projects.js";
 import techs from "./techs.js";
@@ -48,5 +49,6 @@ DOM.render([
     <Knowledge technology={techs} />,
     <Portfolio projects={projects} />,
     <Footer contacts={contacts} />,
-    <Up src={"images/up.png"} alt={"up-button"}/>
+    <Up src={"images/up.png"} alt={"up-button"}/>,
+    <Scripts />
 ], document.getElementById("root"));

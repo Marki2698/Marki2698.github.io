@@ -1210,15 +1210,19 @@ var _up = __webpack_require__(41);
 
 var _up2 = _interopRequireDefault(_up);
 
-var _contacts = __webpack_require__(42);
+var _scripts = __webpack_require__(42);
+
+var _scripts2 = _interopRequireDefault(_scripts);
+
+var _contacts = __webpack_require__(43);
 
 var _contacts2 = _interopRequireDefault(_contacts);
 
-var _projects = __webpack_require__(43);
+var _projects = __webpack_require__(44);
 
 var _projects2 = _interopRequireDefault(_projects);
 
-var _techs = __webpack_require__(44);
+var _techs = __webpack_require__(45);
 
 var _techs2 = _interopRequireDefault(_techs);
 
@@ -1232,7 +1236,7 @@ var secondMainAlt = "my photo";
 var description = "\nLorem ipsum dolor sit amet, consectetur adipiscing elit. \nFusce fringilla est sit amet nulla cursus, vel feugiat mi iaculis. \nVestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae;\nPraesent commodo sapien non tortor imperdiet posuere. \nCras sollicitudin metus vitae risus sodales iaculis. \nNam cursus metus eget leo bibendum malesuada. Nulla facilisi. \nIn ut nisi et felis scelerisque tincidunt at ac sapien. \nVivamus tincidunt urna suscipit nulla tempus vehicula. \nUt interdum in ipsum ut pretium. Morbi eros neque, \nfaucibus porta urna vel, gravida tempor augue. \nProin viverra quis quam et commodo. Nunc non nisi vitae orci pretium suscipit. \nIn non gravida ante, ut molestie metus.\nPraesent pellentesque enim eu massa feugiat finibus. \nNam elementum, eros ac viverra ornare, neque ipsum porta leo, \nnon iaculis tellus massa id leo. Pellentesque sagittis fermentum neque non dictum. \nMaecenas rutrum ante eget leo tempor commodo. Vestibulum mattis sapien et erat lobortis, \nsit amet mollis mi iaculis. Cras placerat nec magna vitae efficitur. \nNulla at pretium tellus. Quisque non mi auctor, ultricies dolor ornare, semper enim. \nPraesent sed odio rutrum, porta odio sed, dignissim arcu. \nVivamus suscipit ex sed nibh egestas, vitae tempor ante vulputate. \nNulla aliquam massa vel mattis cursus. Pellentesque eu diam rutrum, \nfaucibus lacus et, laoreet magna. ";
 //alert("done!");
 
-_reactDom2.default.render([_react2.default.createElement(_navbar2.default, { topics: topics }), _react2.default.createElement(_mainphoto2.default, { src: mainSrc, alt: mainAlt }), _react2.default.createElement(_about2.default, { src: secondMainSrc, alt: secondMainAlt, desc: description }), _react2.default.createElement(_knowledge2.default, { technology: _techs2.default }), _react2.default.createElement(_portfolio2.default, { projects: _projects2.default }), _react2.default.createElement(_footer2.default, { contacts: _contacts2.default }), _react2.default.createElement(_up2.default, { src: "images/up.png", alt: "up-button" })], document.getElementById("root"));
+_reactDom2.default.render([_react2.default.createElement(_navbar2.default, { topics: topics }), _react2.default.createElement(_mainphoto2.default, { src: mainSrc, alt: mainAlt }), _react2.default.createElement(_about2.default, { src: secondMainSrc, alt: secondMainAlt, desc: description }), _react2.default.createElement(_knowledge2.default, { technology: _techs2.default }), _react2.default.createElement(_portfolio2.default, { projects: _projects2.default }), _react2.default.createElement(_footer2.default, { contacts: _contacts2.default }), _react2.default.createElement(_up2.default, { src: "images/up.png", alt: "up-button" }), _react2.default.createElement(_scripts2.default, null)], document.getElementById("root"));
 
 /***/ }),
 /* 20 */
@@ -18580,13 +18584,26 @@ var Navbar = function (_React$Component) {
             var _this2 = this;
 
             return _react2.default.createElement(
-                "div",
-                { className: "navbar custom-navbar" },
-                this.topics.map(function (topic, i) {
-                    return _react2.default.createElement(_item2.default, { key: i, href: topic, click: function click(e) {
-                            return _this2.GoTo(e);
-                        } });
-                })
+                "nav",
+                { className: "navbar navbar-expand-md navbar-light bg-light custom-nav" },
+                _react2.default.createElement(
+                    "button",
+                    { className: "navbar-toggler", type: "button", "data-toggle": "collapse", "data-target": "#navbarNavAltMarkup", "aria-controls": "navbarNavAltMarkup", "aria-expanded": "false", "aria-label": "Toggle navigation" },
+                    _react2.default.createElement("span", { className: "navbar-toggler-icon" })
+                ),
+                _react2.default.createElement(
+                    "div",
+                    { className: "collapse navbar-collapse", id: "navbarNavAltMarkup" },
+                    _react2.default.createElement(
+                        "div",
+                        { className: "navbar-nav custom-list" },
+                        this.topics.map(function (topic, i) {
+                            return _react2.default.createElement(_item2.default, { key: i, href: topic, click: function click(e) {
+                                    return _this2.GoTo(e);
+                                } });
+                        })
+                    )
+                )
             );
         }
     }]);
@@ -19262,7 +19279,7 @@ var Item = function Item(_ref) {
         click = _ref.click;
     return _react2.default.createElement(
         "a",
-        { href: "#" + href, className: "navbar-item", onClick: click },
+        { href: "#" + href, className: "nav-item nav-link navbar-item", onClick: click },
         " ",
         href,
         " "
@@ -19731,6 +19748,35 @@ exports.default = Up;
 
 /***/ }),
 /* 42 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+//import PropTypes from "prop-types";
+
+var sources = ["../../node_modules/bootstrap/dist/bootstrap.js", "../../node_modules/tooltip.js/dist/tooltip.js", "../../node_modules/pooper.js/dist/pooper.js", "../../node_modules/jquery/dist/jquery.js"];
+
+var Scripts = function Scripts() {
+    sources.map(function (val, i) {
+        _react2.default.createElement("script", { key: i, type: "text/javascript", src: val });
+    });
+};
+
+exports.default = Scripts;
+
+/***/ }),
+/* 43 */
 /***/ (function(module, exports) {
 
 module.exports = [
@@ -19749,7 +19795,7 @@ module.exports = [
 ];
 
 /***/ }),
-/* 43 */
+/* 44 */
 /***/ (function(module, exports) {
 
 module.exports = [
@@ -19791,7 +19837,7 @@ module.exports = [
 ];
 
 /***/ }),
-/* 44 */
+/* 45 */
 /***/ (function(module, exports) {
 
 module.exports = [

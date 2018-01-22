@@ -6043,13 +6043,14 @@ body {
 .hidden {
   display: none; }
 
-.custom-navbar {
-  background-color: #018fd3;
+.custom-list {
   justify-content: space-around;
   padding: 0;
-  text-align: center; }
+  text-align: center;
+  position: relative;
+  width: 100%; }
 
-.custom-navbar .navbar-item {
+.custom-list .navbar-item {
   position: relative;
   width: 20%;
   padding: 20px 0px;
@@ -6057,7 +6058,7 @@ body {
   color: #ffffff;
   transition: background-color 0.4, color 0.4; }
 
-.custom-navbar .navbar-item:hover {
+.custom-list .navbar-item:hover {
   background-color: #000000;
   color: #ffffff; }
 

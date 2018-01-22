@@ -1,14 +1,20 @@
 @import "../variables/_variables.scss";
 @import "../mixins/_mixins.scss";
 
-.custom-navbar {
-    background-color: $navbar-bg;
+.custom-nav {
+    // padding: 0;
+}
+
+.custom-list {
+    // background-color: $navbar-bg;
     justify-content: space-around;
     padding: 0;
     text-align: center;
+    position: relative;
+    width: 100%;
 }
 
-.custom-navbar .navbar-item {
+.custom-list .navbar-item {
     position: relative;
     width: 20%;
     padding: 20px 0px;
@@ -17,7 +23,7 @@
     transition: background-color $duration, color $duration;
 }
 
-.custom-navbar .navbar-item:hover {
+.custom-list .navbar-item:hover {
     background-color: $hover-bg;
     color: $hover-color;
 }
