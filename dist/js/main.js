@@ -1236,7 +1236,11 @@ var secondMainAlt = "my photo";
 var description = "\nLorem ipsum dolor sit amet, consectetur adipiscing elit. \nFusce fringilla est sit amet nulla cursus, vel feugiat mi iaculis. \nVestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae;\nPraesent commodo sapien non tortor imperdiet posuere. \nCras sollicitudin metus vitae risus sodales iaculis. \nNam cursus metus eget leo bibendum malesuada. Nulla facilisi. \nIn ut nisi et felis scelerisque tincidunt at ac sapien. \nVivamus tincidunt urna suscipit nulla tempus vehicula. \nUt interdum in ipsum ut pretium. Morbi eros neque, \nfaucibus porta urna vel, gravida tempor augue. \nProin viverra quis quam et commodo. Nunc non nisi vitae orci pretium suscipit. \nIn non gravida ante, ut molestie metus.\nPraesent pellentesque enim eu massa feugiat finibus. \nNam elementum, eros ac viverra ornare, neque ipsum porta leo, \nnon iaculis tellus massa id leo. Pellentesque sagittis fermentum neque non dictum. \nMaecenas rutrum ante eget leo tempor commodo. Vestibulum mattis sapien et erat lobortis, \nsit amet mollis mi iaculis. Cras placerat nec magna vitae efficitur. \nNulla at pretium tellus. Quisque non mi auctor, ultricies dolor ornare, semper enim. \nPraesent sed odio rutrum, porta odio sed, dignissim arcu. \nVivamus suscipit ex sed nibh egestas, vitae tempor ante vulputate. \nNulla aliquam massa vel mattis cursus. Pellentesque eu diam rutrum, \nfaucibus lacus et, laoreet magna. ";
 //alert("done!");
 
-_reactDom2.default.render([_react2.default.createElement(_navbar2.default, { topics: topics }), _react2.default.createElement(_mainphoto2.default, { src: mainSrc, alt: mainAlt }), _react2.default.createElement(_about2.default, { src: secondMainSrc, alt: secondMainAlt, desc: description }), _react2.default.createElement(_knowledge2.default, { technology: _techs2.default }), _react2.default.createElement(_portfolio2.default, { projects: _projects2.default }), _react2.default.createElement(_footer2.default, { contacts: _contacts2.default }), _react2.default.createElement(_up2.default, { src: "images/up.png", alt: "up-button" }), _react2.default.createElement(_scripts2.default, null)], document.getElementById("root"));
+var sources = ["node_modules/bootstrap/dist/bootstrap.js", "node_modules/tooltip.js/dist/tooltip.js", "node_modules/pooper.js/dist/pooper.js", "node_modules/jquery/dist/jquery.js"];
+
+_reactDom2.default.render([_react2.default.createElement(_navbar2.default, { topics: topics }), _react2.default.createElement(_mainphoto2.default, { src: mainSrc, alt: mainAlt }), _react2.default.createElement(_about2.default, { src: secondMainSrc, alt: secondMainAlt, desc: description }), _react2.default.createElement(_knowledge2.default, { technology: _techs2.default }), _react2.default.createElement(_portfolio2.default, { projects: _projects2.default }), _react2.default.createElement(_footer2.default, { contacts: _contacts2.default }), _react2.default.createElement(_up2.default, { src: "images/up.png", alt: "up-button" }) /* ,
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         <Scripts sources={sources}/> */
+], document.getElementById("root"));
 
 /***/ }),
 /* 20 */
@@ -19765,12 +19769,25 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 //import PropTypes from "prop-types";
 
-var sources = ["../../node_modules/bootstrap/dist/bootstrap.js", "../../node_modules/tooltip.js/dist/tooltip.js", "../../node_modules/pooper.js/dist/pooper.js", "../../node_modules/jquery/dist/jquery.js"];
+/* const sources = [
+    "../../node_modules/bootstrap/dist/bootstrap.js",
+    "../../node_modules/tooltip.js/dist/tooltip.js",
+    "../../node_modules/pooper.js/dist/pooper.js",
+    "../../node_modules/jquery/dist/jquery.js"
+]; */
 
-var Scripts = function Scripts() {
-    sources.map(function (val, i) {
-        _react2.default.createElement("script", { key: i, type: "text/javascript", src: val });
-    });
+var Script = function Script(val) {
+    return _react2.default.createElement("script", { type: "text/javascript", src: val });
+};
+
+var Scripts = function Scripts(sources) {
+    return _react2.default.createElement(
+        "div",
+        null,
+        "sources.map((val, i) => ",
+        _react2.default.createElement(Script, { key: i, val: val }),
+        ")"
+    );
 };
 
 exports.default = Scripts;

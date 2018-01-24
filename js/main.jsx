@@ -42,6 +42,13 @@ Nulla aliquam massa vel mattis cursus. Pellentesque eu diam rutrum,
 faucibus lacus et, laoreet magna. `;
 //alert("done!");
 
+const sources = [
+    "node_modules/bootstrap/dist/bootstrap.js",
+    "node_modules/tooltip.js/dist/tooltip.js",
+    "node_modules/pooper.js/dist/pooper.js",
+    "node_modules/jquery/dist/jquery.js"
+];
+
 DOM.render([
     <Navbar topics={topics}/>,
     <MainPhoto src={mainSrc} alt={mainAlt}/>,
@@ -49,6 +56,6 @@ DOM.render([
     <Knowledge technology={techs} />,
     <Portfolio projects={projects} />,
     <Footer contacts={contacts} />,
-    <Up src={"images/up.png"} alt={"up-button"}/>,
-    <Scripts />
+    <Up src={"images/up.png"} alt={"up-button"}/>/* ,
+    <Scripts sources={sources}/> */
 ], document.getElementById("root"));
