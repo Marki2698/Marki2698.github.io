@@ -12,14 +12,16 @@ class Navbar extends React.Component {
         e.preventDefault();
         alert(e.target.innerHTML);
     }
+    
+    //webpack-dev-server --hot
 
     render() {
         return(
-            <nav className="navbar navbar-expand-md navbar-light bg-light custom-nav">
-                <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <nav className="navbar navbar-expand-md custom-nav">
+                <button className="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="NavBar" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
                 </button>
-                <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div className="collapse navbar-collapse" id="NavBar">
                     <div className="navbar-nav custom-list">
                     {
                         this.topics.map((topic, i) => <Item key={i} href={topic} click={(e) => this.GoTo(e)}/> )

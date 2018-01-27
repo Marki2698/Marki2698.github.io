@@ -1,0 +1,15 @@
+.main-photo {
+    background-image: url("/media/marki/My Files/coding/mypage/images/superman_crop.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.main-photo .image {
+    position: relative;
+    width: 50%;
+    left: 25%;
+    margin: 10% 0%;
+    border: 10px solid #ffffff;
+    border-radius: 50%;
+    box-shadow: #000000 0px 0px 600px 60px;
+}

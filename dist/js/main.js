@@ -1229,7 +1229,7 @@ var _techs2 = _interopRequireDefault(_techs);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var topics = ["Marki2698", "About me", "What I know", "What I've made", "Contact with me"];
-var mainSrc = "images/models.jpg";
+var mainSrc = "images/me.jpg";
 var mainAlt = "my photo";
 var secondMainSrc = "images/models.jpg";
 var secondMainAlt = "my photo";
@@ -18582,6 +18582,9 @@ var Navbar = function (_React$Component) {
             e.preventDefault();
             alert(e.target.innerHTML);
         }
+
+        //webpack-dev-server --hot
+
     }, {
         key: "render",
         value: function render() {
@@ -18589,15 +18592,15 @@ var Navbar = function (_React$Component) {
 
             return _react2.default.createElement(
                 "nav",
-                { className: "navbar navbar-expand-md navbar-light bg-light custom-nav" },
+                { className: "navbar navbar-expand-md custom-nav" },
                 _react2.default.createElement(
                     "button",
-                    { className: "navbar-toggler", type: "button", "data-toggle": "collapse", "data-target": "#navbarNavAltMarkup", "aria-controls": "navbarNavAltMarkup", "aria-expanded": "false", "aria-label": "Toggle navigation" },
+                    { className: "navbar-toggler", type: "button", "data-toggle": "collapse", "data-target": ".navbar-collapse", "aria-controls": "NavBar", "aria-expanded": "false", "aria-label": "Toggle navigation" },
                     _react2.default.createElement("span", { className: "navbar-toggler-icon" })
                 ),
                 _react2.default.createElement(
                     "div",
-                    { className: "collapse navbar-collapse", id: "navbarNavAltMarkup" },
+                    { className: "collapse navbar-collapse", id: "NavBar" },
                     _react2.default.createElement(
                         "div",
                         { className: "navbar-nav custom-list" },
@@ -19343,7 +19346,7 @@ MainPhoto.propTypes = {
 };
 
 MainPhoto.defaultProps = {
-    src: "images/semi.jpeg",
+    src: "images/me.jpeg",
     alt: "default image"
 };
 

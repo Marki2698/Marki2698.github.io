@@ -12,7 +12,7 @@ MainPhoto.propTypes = {
 };
 
 MainPhoto.defaultProps = {
-    src: "images/semi.jpeg",
+    src: "images/me.jpeg",
     alt: "default image"
 };
 

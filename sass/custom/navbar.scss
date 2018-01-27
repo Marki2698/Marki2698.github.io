@@ -2,11 +2,11 @@
 @import "../mixins/_mixins.scss";
 
 .custom-nav {
-    // padding: 0;
+    padding: 0;
 }
 
 .custom-list {
-    // background-color: $navbar-bg;
+    background-color: $navbar-bg;
     justify-content: space-around;
     padding: 0;
     text-align: center;

@@ -13,7 +13,7 @@ import projects from "./projects.js";
 import techs from "./techs.js";
 
 let topics = ["Marki2698", "About me", "What I know", "What I've made", "Contact with me"];
-let mainSrc = "images/models.jpg";
+let mainSrc = "images/me.jpg";
 let mainAlt = "my photo";
 let secondMainSrc = "images/models.jpg";
 let secondMainAlt = "my photo";
