@@ -19,8 +19,13 @@ let config = {
                 test: /\.scss$/,
                 use: ExtractTextPlugin.extract({
                     fallback: "style-loader",
-                    use: ['css-loader', 'sass-loader']
+                    use: ['css-loader', 'resolve-url-loader', 'sass-loader?sourceMap']
                 })
+            },
+            {
+                test: /\.(png|jpeg|jpg|svg|gif)$/,
+                include: path.resolve(__dirname, "images"),
+                loader: "url-loader?limit=30000&name=images/[name].[ext]"
             }
         ]
     },
@@ -45,6 +50,14 @@ let cssOutput = Object.assign({}, config, {
         filename: "style.css"
     }
 });
+
+/* let imgOutput = Object.assign({}, config, {
+    entry: "./images",
+    output: {
+        path: path.resolve(__dirname, "imgs"),
+        filename: "[name].jpg"
+    }
+}); */
 
 module.exports = [
     jsOutput, cssOutput

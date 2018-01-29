@@ -18592,7 +18592,7 @@ var Navbar = function (_React$Component) {
 
             return _react2.default.createElement(
                 "nav",
-                { className: "navbar navbar-expand-md custom-nav" },
+                { className: "navbar sticky-top navbar-expand-md bg-light custom-nav" },
                 _react2.default.createElement(
                     "button",
                     { className: "navbar-toggler", type: "button", "data-toggle": "collapse", "data-target": ".navbar-collapse", "aria-controls": "NavBar", "aria-expanded": "false", "aria-label": "Toggle navigation" },
