@@ -9133,5 +9133,62 @@ body {
   box-shadow: #000000 0px 0px 600px 60px;
 }
 
+.about .desc:first-child {
+  position: relative;
+  width: 40%;
+  float: left;
+  font-size: 5em;
+  text-align: center;
+  font-weight: bold;
+  /* @media screen and (max-width: 576px) {
+        font-size: medium;
+    } */
+}
+
+@media screen and (max-width: 768px) {
+  .about .desc:first-child {
+    float: none;
+    width: 90%;
+    font-size: xx-large;
+  }
+}
+
+.about .desc {
+  margin: 5%;
+}
+
+.knowledge {
+  text-align: center;
+}
+
+.knowledge .technology {
+  position: relative;
+  width: 15%;
+  margin: 2% 8.6%;
+  float: left;
+}
+
+@media screen and (max-width: 768px) {
+  .knowledge .technology {
+    width: 30%;
+    margin: 2% 9%;
+  }
+}
+
+@media screen and (max-width: 384px) {
+  .knowledge .technology {
+    width: 50%;
+    margin: 2% 25%;
+  }
+}
+
+.knowledge .technology .image {
+  position: relative;
+  width: 100%;
+  height: inherit;
+  border: 2px solid #ff00ff;
+  border-radius: 100%;
+}
+
 
 /*# sourceMappingURL=style.css.map*/

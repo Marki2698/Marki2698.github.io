@@ -1,0 +1,23 @@
+.about .desc:first-child {
+    position: relative;
+    width: 40%;
+    float: left;
+    font-size: 5em;
+    text-align: center;
+    font-weight: bold;
+    // margin: 5%;
+    @media screen and (max-width: 768px) {
+        float: none;
+        width: 90%;
+        font-size: xx-large;
+        // margin: 5%;
+    }
+    /* @media screen and (max-width: 576px) {
+        font-size: medium;
+    } */
+}
+
+.about .desc {
+    margin: 5%;
+}
+

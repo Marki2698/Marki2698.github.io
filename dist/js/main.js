@@ -1229,7 +1229,7 @@ var _techs2 = _interopRequireDefault(_techs);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var topics = ["Marki2698", "About me", "What I know", "What I've made", "Contact with me"];
-var mainSrc = "images/me.jpg";
+var mainSrc = "images/models.jpg";
 var mainAlt = "my photo";
 var secondMainSrc = "images/models.jpg";
 var secondMainAlt = "my photo";
@@ -1238,8 +1238,8 @@ var description = "\nLorem ipsum dolor sit amet, consectetur adipiscing elit. \n
 
 var sources = ["node_modules/bootstrap/dist/bootstrap.js", "node_modules/tooltip.js/dist/tooltip.js", "node_modules/pooper.js/dist/pooper.js", "node_modules/jquery/dist/jquery.js"];
 
-_reactDom2.default.render([_react2.default.createElement(_navbar2.default, { topics: topics }), _react2.default.createElement(_mainphoto2.default, { src: mainSrc, alt: mainAlt }), _react2.default.createElement(_about2.default, { src: secondMainSrc, alt: secondMainAlt, desc: description }), _react2.default.createElement(_knowledge2.default, { technology: _techs2.default }), _react2.default.createElement(_portfolio2.default, { projects: _projects2.default }), _react2.default.createElement(_footer2.default, { contacts: _contacts2.default }), _react2.default.createElement(_up2.default, { src: "images/up.png", alt: "up-button" }) /* ,
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         <Scripts sources={sources}/> */
+_reactDom2.default.render([_react2.default.createElement(_navbar2.default, { topics: topics }), _react2.default.createElement(_mainphoto2.default, { src: mainSrc, alt: mainAlt }), _react2.default.createElement(_about2.default, { desc1: "A little about me", desc2: description }), _react2.default.createElement(_knowledge2.default, { technology: _techs2.default }), _react2.default.createElement(_portfolio2.default, { projects: _projects2.default }), _react2.default.createElement(_footer2.default, { contacts: _contacts2.default }), _react2.default.createElement(_up2.default, { src: "images/up.png", alt: "up-button" }) /* ,
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              <Scripts sources={sources}/> */
 ], document.getElementById("root"));
 
 /***/ }),
@@ -19382,27 +19382,28 @@ var _description2 = _interopRequireDefault(_description);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var About = function About(_ref) {
-    var src = _ref.src,
-        alt = _ref.alt,
-        desc = _ref.desc;
+    var desc1 = _ref.desc1,
+        desc2 = _ref.desc2;
     return _react2.default.createElement(
         "section",
         { className: "about" },
-        _react2.default.createElement(_image2.default, { src: src, alt: alt }),
-        _react2.default.createElement(_description2.default, { desc: desc })
+        _react2.default.createElement(_description2.default, { desc: desc1 }),
+        _react2.default.createElement(_description2.default, { desc: desc2 })
     );
 };
 
 About.propTypes = {
-    src: _propTypes2.default.string,
-    alt: _propTypes2.default.string,
-    desc: _propTypes2.default.string
+    /* src: PropTypes.string,
+    alt: PropTypes.string, */
+    desc1: _propTypes2.default.string,
+    desc2: _propTypes2.default.string
 };
 
 About.defaultProps = {
-    src: "images/semi.jpeg",
-    alt: "default image",
-    desc: "default description"
+    /* src: "images/semi.jpeg",
+    alt: "default image", */
+    desc1: "default description",
+    desc2: "default description"
 };
 
 exports.default = About;
@@ -19862,62 +19863,62 @@ module.exports = [
 
 module.exports = [
     {
-        src: "images/html5.png",
+        src: "images/html52.png",
         alt: "HTML5",
         desc: "some description"
     },
     {
-        src: "images/css3.png",
+        src: "images/css31.png",
         alt: "СSS3",
         desc: "some description"
     },
     {
-        src: "images/js.jpg",
+        src: "images/js1.png",
         alt: "JavaScript",
         desc: "some description"
     },
     {
-        src: "images/es6.png",
+        src: "images/es61.png",
         alt: "ES6",
         desc: "some description"
     },
     {
-        src: "images/webpack.png",
+        src: "images/webpack1.jpg",
         alt: "Webpack",
         desc: "some description"
     },
     {
-        src: "images/react.jpg",
+        src: "images/react1.png",
         alt: "React.js",
         desc: "some description"
     },
     {
-        src: "images/node.jpg",
+        src: "images/node1.png",
         alt: "Node.js",
         desc: "some description"
     },
     {
-        src: "images/express.png",
+        src: "images/express1.png",
         alt: "Express.js",
         desc: "some description"
     },
     {
-        src: "images/mongodb.jpg",
+        src: "images/mongodb1.jpg",
         alt: "MongoDB",
         desc: "some description"
     },
     {
-        src: "images/git.png",
+        src: "images/git1.png",
         alt: "Git",
         desc: "some description"
     },
     {
-        src: "images/sass.png",
+        src: "images/sass1.png",
         alt: "Sass",
         desc: "some description"
     },
     {
-        src: "images/responsive.jpg",
+        src: "images/responsive1.png",
         alt: "Responsive Design",
         desc: "some description"
     }

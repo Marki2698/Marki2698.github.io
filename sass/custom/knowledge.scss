@@ -1,0 +1,28 @@
+.knowledge {
+    text-align: center;
+}
+
+.knowledge .technology {
+    position: relative;
+    width: 15%;
+    // height: 175px;
+    margin: 2% 8.6%;
+    float: left;
+    @media screen and (max-width: 768px) {
+        // float: none;
+        width: 30%;
+        margin: 2% 9%;
+    }
+    @media screen and (max-width: 384px) {
+        width: 50%;
+        margin: 2% 25%;
+    }
+}
+
+.knowledge .technology .image {
+    position: relative;
+    width: 100%;
+    height: inherit;
+    border: 2px solid #ff00ff;
+    border-radius: 100%;
+}

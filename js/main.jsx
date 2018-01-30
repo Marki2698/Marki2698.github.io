@@ -13,7 +13,7 @@ import projects from "./projects.js";
 import techs from "./techs.js";
 
 let topics = ["Marki2698", "About me", "What I know", "What I've made", "Contact with me"];
-let mainSrc = "images/me.jpg";
+let mainSrc = "images/models.jpg";
 let mainAlt = "my photo";
 let secondMainSrc = "images/models.jpg";
 let secondMainAlt = "my photo";
@@ -52,7 +52,7 @@ const sources = [
 DOM.render([
     <Navbar topics={topics}/>,
     <MainPhoto src={mainSrc} alt={mainAlt}/>,
-    <About src={secondMainSrc} alt={secondMainAlt} desc={description}/>,
+    <About desc1={"A little about me"} desc2={description}/>,
     <Knowledge technology={techs} />,
     <Portfolio projects={projects} />,
     <Footer contacts={contacts} />,

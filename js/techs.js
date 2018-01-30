@@ -1,61 +1,61 @@
 module.exports = [
     {
-        src: "images/html5.png",
+        src: "images/html52.png",
         alt: "HTML5",
         desc: "some description"
     },
     {
-        src: "images/css3.png",
+        src: "images/css31.png",
         alt: "СSS3",
         desc: "some description"
     },
     {
-        src: "images/js.jpg",
+        src: "images/js1.png",
         alt: "JavaScript",
         desc: "some description"
     },
     {
-        src: "images/es6.png",
+        src: "images/es61.png",
         alt: "ES6",
         desc: "some description"
     },
     {
-        src: "images/webpack.png",
+        src: "images/webpack1.jpg",
         alt: "Webpack",
         desc: "some description"
     },
     {
-        src: "images/react.jpg",
+        src: "images/react1.png",
         alt: "React.js",
         desc: "some description"
     },
     {
-        src: "images/node.jpg",
+        src: "images/node1.png",
         alt: "Node.js",
         desc: "some description"
     },
     {
-        src: "images/express.png",
+        src: "images/express1.png",
         alt: "Express.js",
         desc: "some description"
     },
     {
-        src: "images/mongodb.jpg",
+        src: "images/mongodb1.jpg",
         alt: "MongoDB",
         desc: "some description"
     },
     {
-        src: "images/git.png",
+        src: "images/git1.png",
         alt: "Git",
         desc: "some description"
     },
     {
-        src: "images/sass.png",
+        src: "images/sass1.png",
         alt: "Sass",
         desc: "some description"
     },
     {
-        src: "images/responsive.jpg",
+        src: "images/responsive1.png",
         alt: "Responsive Design",
         desc: "some description"
     }
