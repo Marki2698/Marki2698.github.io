@@ -23,9 +23,10 @@ let config = {
                 })
             },
             {
-                test: /\.(png|jpeg|jpg|svg|gif)$/,
-                include: path.resolve(__dirname, "images"),
-                loader: "url-loader?limit=30000&name=images/[name].[ext]"
+                test: /\.(png|jpe?g|jpg|svg|gif)$/i,
+                use: ["url-loader?limit=10000", "img-loader"]
+                /* include: path.resolve(__dirname, "images"),
+                loader: "url-loader?limit=30000&name=images/[name].[ext]" */
             }
         ]
     },
@@ -55,7 +56,7 @@ let cssOutput = Object.assign({}, config, {
     entry: "./images",
     output: {
         path: path.resolve(__dirname, "imgs"),
-        filename: "[name].jpg"
+        filename: "[name].[ext]"
     }
 }); */
 

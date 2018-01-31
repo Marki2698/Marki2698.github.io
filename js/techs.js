@@ -20,7 +20,7 @@ module.exports = [
         desc: "some description"
     },
     {
-        src: "images/webpack1.jpg",
+        src: "images/webpack1.png",
         alt: "Webpack",
         desc: "some description"
     },
@@ -35,12 +35,12 @@ module.exports = [
         desc: "some description"
     },
     {
-        src: "images/express1.png",
+        src: "images/express12.png",
         alt: "Express.js",
         desc: "some description"
     },
     {
-        src: "images/mongodb1.jpg",
+        src: "images/mongodb1.png",
         alt: "MongoDB",
         desc: "some description"
     },
@@ -50,7 +50,7 @@ module.exports = [
         desc: "some description"
     },
     {
-        src: "images/sass1.png",
+        src: "images/sass12.png",
         alt: "Sass",
         desc: "some description"
     },
