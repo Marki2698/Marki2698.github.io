@@ -9067,8 +9067,19 @@ a.text-dark:focus {
   }
 }
 
+/* @import "../variables/_variables.scss";
+@import "../mixins/_mixins.scss"; */
+
 body {
   background-color: #e5f3fa;
+}
+
+section:first-child {
+  margin: 0 !important;
+}
+
+section {
+  margin: 3% 0%;
 }
 
 .main-photo,
@@ -9090,8 +9101,13 @@ body {
   display: none;
 }
 
+footer {
+  margin: 5% 0% 0% 0%;
+}
+
 .custom-nav {
   padding: 0;
+  background-color: #005BBB;
 }
 
 .custom-list {
@@ -9110,6 +9126,13 @@ body {
   text-decoration-style: none;
   color: #ffffff;
   transition: background-color 0.4, color 0.4;
+}
+
+@media screen and (max-width: 768px) {
+  .custom-list .navbar-item {
+    width: 100%;
+    text-align: center;
+  }
 }
 
 .custom-list .navbar-item:hover {
@@ -9155,6 +9178,7 @@ body {
 
 .about .desc {
   margin: 5%;
+  text-align: justify;
 }
 
 .knowledge {
@@ -9165,7 +9189,7 @@ body {
   position: relative;
   width: 15%;
   margin: 2% 8.6%;
-  float: left;
+  display: inline-block;
 }
 
 @media screen and (max-width: 768px) {
@@ -9188,6 +9212,145 @@ body {
   height: inherit;
   border: 2px solid #ff00ff;
   border-radius: 100%;
+}
+
+.portfolio .project {
+  position: relative;
+  width: 70%;
+  left: 15%;
+  margin: 3% 0%;
+}
+
+@media screen and (max-width: 384px) {
+  .portfolio .project {
+    width: 100%;
+    left: 0%;
+  }
+}
+
+.portfolio .project .image {
+  position: relative;
+  width: 50%;
+  left: 25%;
+  border: 5px solid #ffffff;
+  border-radius: 5%;
+}
+
+@media screen and (max-width: 384px) {
+  .portfolio .project .image {
+    width: 60%;
+    left: 20%;
+  }
+}
+
+.portfolio .project .anchor {
+  /* position: relative;
+    width: 100%;
+    text-align: center;
+    font-size: 2em;
+    margin: 1% 0%;
+    text-decoration-style: none;
+    color: #000000;
+    display: block;
+    @media screen and (max-width: 384px) {
+        font-size: 1em;
+        font-weight: bold;
+    } */
+  position: relative;
+  width: 100%;
+  left: 0%;
+  text-align: center;
+  font-size: 2em;
+  margin: 1% 0%;
+  text-decoration-style: none;
+  color: #000000;
+  display: block;
+}
+
+@media screen and (max-width: 384px) {
+  .portfolio .project .anchor {
+    font-size: 1em;
+    font-weight: bold;
+  }
+}
+
+.portfolio .project .desc {
+  position: relative;
+  width: 90%;
+  left: 5%;
+  font-size: 14pt;
+  margin: 1% 0%;
+  text-align: justify;
+}
+
+.contacts {
+  background-color: black;
+}
+
+.contacts .contact {
+  position: relative;
+  width: 60%;
+  left: 20%;
+  padding: 4% 0%;
+}
+
+@media screen and (max-width: 384px) {
+  .contacts .contact {
+    width: 90%;
+    left: 5%;
+  }
+}
+
+.contacts .contact .image {
+  position: relative;
+  width: 20%;
+  display: inline-block;
+}
+
+.contacts .contact .anchor {
+  position: relative;
+  width: 70%;
+  left: 10%;
+  text-align: center;
+  font-size: 2em;
+  margin: 1% 0%;
+  text-decoration-style: none;
+  color: #ffffff;
+  display: inline;
+}
+
+@media screen and (max-width: 384px) {
+  .contacts .contact .anchor {
+    font-size: 1em;
+    font-weight: bold;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .contacts .contact .anchor {
+    font-size: 14pt;
+  }
+}
+
+.up-button {
+  cursor: pointer;
+  display: block;
+  position: fixed;
+  bottom: 3%;
+  right: 3%;
+  width: 5%;
+  z-index: 100;
+}
+
+@media screen and (max-width: 384px) and (max-width: 768px) {
+  .up-button {
+    width: 10%;
+  }
+}
+
+.up-button .image {
+  position: relative;
+  width: 100%;
 }
 
 

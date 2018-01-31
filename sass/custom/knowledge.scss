@@ -7,7 +7,8 @@
     width: 15%;
     // height: 175px;
     margin: 2% 8.6%;
-    float: left;
+    display: inline-block;
+    // float: left;
     @media screen and (max-width: 768px) {
         // float: none;
         width: 30%;

@@ -6,3 +6,20 @@
     background-color:$bg;
     color: $color;
 }
+
+
+@mixin Anchor($width: 100%, $left: 0%, $block: block, $color: #000000) {
+    position: relative;
+    width: $width;
+    left: $left;
+    text-align: center;
+    font-size: 2em;
+    margin: 1% 0%;
+    text-decoration-style: none;
+    color: $color;
+    display: $block;
+    @media screen and (max-width: 384px) {
+        font-size: 1em;
+        font-weight: bold;
+    }
+}

@@ -1,0 +1,49 @@
+@import "../mixins/_mixins";
+
+.portfolio .project {
+    position: relative;
+    width: 70%;
+    left: 15%;
+    margin: 3% 0%;
+    @media screen and (max-width: 384px) {
+        width: 100%;
+        left: 0%;
+    }
+}
+
+.portfolio .project .image {
+    position: relative;
+    width: 50%;
+    left: 25%;
+    border: 5px solid #ffffff;
+    border-radius: 5%;
+    @media screen and (max-width: 384px){
+        width: 60%;
+        left: 20%;
+    }
+}
+
+.portfolio .project .anchor {
+    /* position: relative;
+    width: 100%;
+    text-align: center;
+    font-size: 2em;
+    margin: 1% 0%;
+    text-decoration-style: none;
+    color: #000000;
+    display: block;
+    @media screen and (max-width: 384px) {
+        font-size: 1em;
+        font-weight: bold;
+    } */
+    @include Anchor();
+}
+
+.portfolio .project .desc {
+    position: relative;
+    width: 90%;
+    left: 5%;
+    font-size: 14pt;
+    margin: 1% 0%;
+    text-align: justify;
+}

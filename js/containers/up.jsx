@@ -9,16 +9,17 @@ class Up extends React.Component {
     }
 
     Up(e) {
-        $(document).animate({
-            scrollTo: 0
-        }, "slow");
-        return false;
+        return function(e) {
+            $("html, body").animate({
+                scrollTop: 0
+            }, 1000);
+        }
     }
 
     render() {
         return(
             <div className="up-button">
-                <Image src={this.src} alt={this.alt} onClick={(e) => this.Up(e)} />
+                <Image listener={(e) => this.Up(e)} src={this.src} alt={this.alt} classname={"hidden"}/>
             </div>
         )
     }

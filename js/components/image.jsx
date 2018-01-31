@@ -1,8 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-const Image = ({listener = "", src, alt}) => 
-<img onClick={typeof listener === "string" ? () => { return false } : listener() } className="image" src={src} alt={alt}/>;
+const Image = ({listener = "", src, alt, classname = ""}) => 
+<img onClick={typeof listener === "string" ? () => { return false } : listener() } className={"image " + classname} src={src} alt={alt}/>;
 
 /* class Image extends React.Component {
     constructor(props) {

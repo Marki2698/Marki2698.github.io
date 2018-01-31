@@ -370,10 +370,12 @@ var Image = function Image(_ref) {
     var _ref$listener = _ref.listener,
         listener = _ref$listener === undefined ? "" : _ref$listener,
         src = _ref.src,
-        alt = _ref.alt;
+        alt = _ref.alt,
+        _ref$classname = _ref.classname,
+        classname = _ref$classname === undefined ? "" : _ref$classname;
     return _react2.default.createElement("img", { onClick: typeof listener === "string" ? function () {
             return false;
-        } : listener(), className: "image", src: src, alt: alt });
+        } : listener(), className: "image " + classname, src: src, alt: alt });
 };
 
 /* class Image extends React.Component {
@@ -1238,8 +1240,19 @@ var description = "\nLorem ipsum dolor sit amet, consectetur adipiscing elit. \n
 
 var sources = ["node_modules/bootstrap/dist/bootstrap.js", "node_modules/tooltip.js/dist/tooltip.js", "node_modules/pooper.js/dist/pooper.js", "node_modules/jquery/dist/jquery.js"];
 
-_reactDom2.default.render([_react2.default.createElement(_navbar2.default, { topics: topics }), _react2.default.createElement(_mainphoto2.default, { src: mainSrc, alt: mainAlt }), _react2.default.createElement(_about2.default, { desc1: "A little about me", desc2: description }), _react2.default.createElement(_knowledge2.default, { technology: _techs2.default }), _react2.default.createElement(_portfolio2.default, { projects: _projects2.default }), _react2.default.createElement(_footer2.default, { contacts: _contacts2.default }), _react2.default.createElement(_up2.default, { src: "images/up.png", alt: "up-button" }) /* ,
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              <Scripts sources={sources}/> */
+// listener for scrolling
+$(document).ready(function () {
+    $(document).scroll(function (e) {
+        if (window.scrollY < 1024) {
+            if (document.querySelector(".up-button img").classList.contains("hidden")) return false;else document.querySelector(".up-button img").classList.toggle("hidden");
+        } else {
+            if (document.querySelector(".up-button img").classList.contains("hidden")) document.querySelector(".up-button img").classList.toggle("hidden");else return false;
+        }
+    });
+});
+
+_reactDom2.default.render([_react2.default.createElement(_navbar2.default, { topics: topics }), _react2.default.createElement(_mainphoto2.default, { src: mainSrc, alt: mainAlt }), _react2.default.createElement(_about2.default, { desc1: "A little about me", desc2: description }), _react2.default.createElement(_knowledge2.default, { technology: _techs2.default }), _react2.default.createElement(_portfolio2.default, { projects: _projects2.default }), _react2.default.createElement(_footer2.default, { contacts: _contacts2.default }), _react2.default.createElement(_up2.default, { src: "images/up1.png", alt: "up-button" }) /* ,
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               <Scripts sources={sources}/> */
 ], document.getElementById("root"));
 
 /***/ }),
@@ -18592,7 +18605,7 @@ var Navbar = function (_React$Component) {
 
             return _react2.default.createElement(
                 "nav",
-                { className: "navbar sticky-top navbar-expand-md bg-light custom-nav" },
+                { className: "navbar fixed-top navbar-expand-md custom-nav" },
                 _react2.default.createElement(
                     "button",
                     { className: "navbar-toggler", type: "button", "data-toggle": "collapse", "data-target": ".navbar-collapse", "aria-controls": "NavBar", "aria-expanded": "false", "aria-label": "Toggle navigation" },
@@ -19725,10 +19738,11 @@ var Up = function (_React$Component) {
     _createClass(Up, [{
         key: "Up",
         value: function Up(e) {
-            $(document).animate({
-                scrollTo: 0
-            }, "slow");
-            return false;
+            return function (e) {
+                $("html, body").animate({
+                    scrollTop: 0
+                }, 1000);
+            };
         }
     }, {
         key: "render",
@@ -19738,9 +19752,9 @@ var Up = function (_React$Component) {
             return _react2.default.createElement(
                 "div",
                 { className: "up-button" },
-                _react2.default.createElement(_image2.default, { src: this.src, alt: this.alt, onClick: function onClick(e) {
+                _react2.default.createElement(_image2.default, { listener: function listener(e) {
                         return _this2.Up(e);
-                    } })
+                    }, src: this.src, alt: this.alt, classname: "hidden" })
             );
         }
     }]);

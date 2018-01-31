@@ -5,6 +5,14 @@ body {
     @include bodyBG($bg);
 }
 
+section:first-child {
+    margin: 0!important;
+}
+
+section {
+    margin: 3% 0%;
+}
+
 .main-photo, .about {
     position: relative;
     width: 100%;
@@ -21,4 +29,8 @@ body {
 
 .hidden {
     display: none;
+}
+
+footer {
+    margin: 5% 0% 0% 0%;
 }

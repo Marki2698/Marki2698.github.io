@@ -49,6 +49,22 @@ const sources = [
     "node_modules/jquery/dist/jquery.js"
 ];
 
+
+// listener for scrolling
+$(document).ready(() => {
+    $(document).scroll((e) => {
+        if(window.scrollY < 1024) {
+            if(document.querySelector(".up-button img").classList.contains("hidden")) return false;
+            else document.querySelector(".up-button img").classList.toggle("hidden");
+        }
+        else {
+            if(document.querySelector(".up-button img").classList.contains("hidden")) document.querySelector(".up-button img").classList.toggle("hidden");
+            else  return false;
+        }
+    });
+});
+
+
 DOM.render([
     <Navbar topics={topics}/>,
     <MainPhoto src={mainSrc} alt={mainAlt}/>,
@@ -56,6 +72,6 @@ DOM.render([
     <Knowledge technology={techs} />,
     <Portfolio projects={projects} />,
     <Footer contacts={contacts} />,
-    <Up src={"images/up.png"} alt={"up-button"}/>/* ,
+    <Up src={"images/up1.png"} alt={"up-button"}/>/* ,
     <Scripts sources={sources}/> */
 ], document.getElementById("root"));
