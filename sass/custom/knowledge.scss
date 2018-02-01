@@ -21,9 +21,17 @@
 }
 
 .knowledge .technology .image {
+    cursor: pointer;
     position: relative;
     width: 100%;
     height: inherit;
     border: 2px solid #ff00ff;
     border-radius: 100%;
+}
+
+.knowledge .technology .desc {
+    background-color: yellow;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 10px;
 }

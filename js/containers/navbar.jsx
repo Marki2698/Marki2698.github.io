@@ -15,7 +15,7 @@ class Navbar extends React.Component {
                 $("button.navbar-toggler").click();
             }
             $("html, body").animate({
-                scrollTop: $("#" + href + "").offset().top
+                scrollTop: $("#" + href + "").offset().top - 50
             }, 1000);
         }
     }
@@ -25,7 +25,7 @@ class Navbar extends React.Component {
     render() {
         return(
             <nav className="navbar fixed-top navbar-expand-md custom-nav">
-                <button className="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="NavBar" aria-expanded="false" aria-label="Toggle navigation">
+                <button className="navbar-toggler navbar-dark custom-nav-btn" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="NavBar" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
                 </button>
                 <div className="collapse navbar-collapse" id="NavBar">

@@ -1230,13 +1230,8 @@ var _techs2 = _interopRequireDefault(_techs);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var topics = ["Marki2698", "About me", "What I know", "What I've made", "Contact with me"];
-var mapTop = new Map();
-/* for(let i = 0; i < topics.length; i++) {
-    mapTop.set(topics[i].trim().toLowerCase(), topics[i]);
-} */
+//let topics = ["Marki2698", "About me", "What I know", "What I've made", "Contact with me"];
 
-//mapTop.forEach((val, key) => val);
 var arrtop = [{
     href: "marki2698",
     desc: "Marki2698"
@@ -1253,13 +1248,6 @@ var arrtop = [{
     href: "contact",
     desc: "Contact with me"
 }];
-mapTop.set("Marki2698", "Marki2698");
-mapTop.set("about", "About me");
-mapTop.set("know", "What I know");
-mapTop.set("made", "What I've made");
-mapTop.set("contact", "Contact with me");
-
-console.log(mapTop);
 
 var mainSrc = "images/models.jpg";
 var mainAlt = "my photo";
@@ -18627,11 +18615,9 @@ var Navbar = function (_React$Component) {
                 if ($("button.navbar-toggler").css("display") !== "none") {
                     $("button.navbar-toggler").click();
                 }
-                //e.preventDefault();
                 $("html, body").animate({
-                    scrollTop: $("#" + href + "").offset().top
+                    scrollTop: $("#" + href + "").offset().top - 50
                 }, 1000);
-                //alert(e.target.innerHTML);
             };
         }
 
@@ -18647,7 +18633,7 @@ var Navbar = function (_React$Component) {
                 { className: "navbar fixed-top navbar-expand-md custom-nav" },
                 _react2.default.createElement(
                     "button",
-                    { className: "navbar-toggler", type: "button", "data-toggle": "collapse", "data-target": ".navbar-collapse", "aria-controls": "NavBar", "aria-expanded": "false", "aria-label": "Toggle navigation" },
+                    { className: "navbar-toggler navbar-dark custom-nav-btn", type: "button", "data-toggle": "collapse", "data-target": ".navbar-collapse", "aria-controls": "NavBar", "aria-expanded": "false", "aria-label": "Toggle navigation" },
                     _react2.default.createElement("span", { className: "navbar-toggler-icon" })
                 ),
                 _react2.default.createElement(
@@ -19510,6 +19496,25 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 //technology will be array of objects [{src: "", alt: "", desc: ""}]
 
+function getPopper(ref, pop) {
+    return new Popper(ref, pop, {
+        placement: "top",
+        onCreate: function onCreate(data) {
+            console.log(data);
+        },
+
+        modifiers: {
+            flip: {
+                behaviour: ["left", "right", "top", "bottom"]
+            },
+            offset: {
+                enabled: true,
+                offset: "0,-115"
+            }
+        }
+    });
+}
+
 var Knowledge = function (_React$Component) {
     _inherits(Knowledge, _React$Component);
 
@@ -19520,22 +19525,20 @@ var Knowledge = function (_React$Component) {
 
         _this.technology = _this.props.technology;
         _this.id = _this.props.id;
-        //this.index = 1;
         return _this;
     }
 
     _createClass(Knowledge, [{
         key: "ShowDesc",
         value: function ShowDesc(e) {
-            /* if(e.target.tagname === "IMG") {
-                e.target.nextElementSibling.classList.toggle("hidden");
-            } else if(e.target.tagname === "P") {
-                e.target.classList.toggle("hidden");
-            } */
             return function (e) {
                 if (e.target.tagName.toLowerCase() === "img") {
-                    e.target.nextElementSibling.classList.toggle("hidden");
+                    var ref = e.target;
+                    var pop = e.target.nextElementSibling;
+                    var popper = getPopper(ref, pop);
+                    pop.classList.toggle("hidden");
                 } else if (e.target.tagName.toLowerCase() === "p") {
+                    e.preventDefault();
                     e.target.classList.toggle("hidden");
                 }
             };
@@ -19937,62 +19940,62 @@ module.exports = [
     {
         src: "images/html52.png",
         alt: "HTML5",
-        desc: "some description"
+        desc: "html5"
     },
     {
         src: "images/css31.png",
         alt: "СSS3",
-        desc: "some description"
+        desc: "css3"
     },
     {
         src: "images/js1.png",
         alt: "JavaScript",
-        desc: "some description"
+        desc: "js"
     },
     {
         src: "images/es61.png",
         alt: "ES6",
-        desc: "some description"
+        desc: "es6"
     },
     {
         src: "images/webpack1.png",
         alt: "Webpack",
-        desc: "some description"
+        desc: "webpack"
     },
     {
         src: "images/react1.png",
         alt: "React.js",
-        desc: "some description"
+        desc: "react.js"
     },
     {
         src: "images/node1.png",
         alt: "Node.js",
-        desc: "some description"
+        desc: "node.js"
     },
     {
         src: "images/express12.png",
         alt: "Express.js",
-        desc: "some description"
+        desc: "express.js"
     },
     {
         src: "images/mongodb1.png",
         alt: "MongoDB",
-        desc: "some description"
+        desc: "mongoDB"
     },
     {
         src: "images/git1.png",
         alt: "Git",
-        desc: "some description"
+        desc: "git"
     },
     {
         src: "images/sass12.png",
         alt: "Sass",
-        desc: "some description"
+        desc: "sass"
     },
     {
         src: "images/responsive1.png",
         alt: "Responsive Design",
-        desc: "some description"
+        desc: "design"
     }
 ];
 

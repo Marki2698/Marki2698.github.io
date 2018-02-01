@@ -9140,6 +9140,14 @@ footer {
   color: #ffffff;
 }
 
+.custom-nav-btn {
+  margin: 10px;
+}
+
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255, 255, 255, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E") !important;
+}
+
 .main-photo {
   background-image: url(5a1310504a051d7ca42eb1c8924b0bf2.png);
   background-repeat: no-repeat;
@@ -9207,11 +9215,19 @@ footer {
 }
 
 .knowledge .technology .image {
+  cursor: pointer;
   position: relative;
   width: 100%;
   height: inherit;
   border: 2px solid #ff00ff;
   border-radius: 100%;
+}
+
+.knowledge .technology .desc {
+  background-color: yellow;
+  border-radius: 5px;
+  cursor: pointer;
+  padding: 10px;
 }
 
 .portfolio .project {
