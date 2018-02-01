@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import Image from "../components/image.jsx";
 import Description from "../components/description.jsx";
 
-const About = ({desc1, desc2}) => <section className="about">
+const About = ({id, desc1, desc2}) => <section id={id} className="about">
 <Description desc={desc1}/>
     <Description desc={desc2}/>
 </section>;
@@ -11,6 +11,7 @@ const About = ({desc1, desc2}) => <section className="about">
 About.propTypes = {
     /* src: PropTypes.string,
     alt: PropTypes.string, */
+    id: PropTypes.string,
     desc1: PropTypes.string,
     desc2: PropTypes.string
 };
@@ -18,6 +19,7 @@ About.propTypes = {
 About.defaultProps = {
     /* src: "images/semi.jpeg",
     alt: "default image", */
+    id: "about",
     desc1: "default description",
     desc2: "default description"
 };

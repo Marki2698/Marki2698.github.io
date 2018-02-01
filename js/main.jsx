@@ -12,7 +12,31 @@ import contacts from "./contacts.js";
 import projects from "./projects.js";
 import techs from "./techs.js";
 
-let topics = ["Marki2698", "About me", "What I know", "What I've made", "Contact with me"];
+//let topics = ["Marki2698", "About me", "What I know", "What I've made", "Contact with me"];
+
+let arrtop = [
+    {
+        href: "marki2698",
+        desc: "Marki2698" 
+    },
+    {
+        href: "about",
+        desc: "About me"
+    },
+    {
+        href: "know",
+        desc: "What I know"
+    },
+    {
+        href: "made",
+        desc: "What I've made"
+    },
+    {
+        href: "contact",
+        desc: "Contact with me"
+    }
+]
+
 let mainSrc = "images/models.jpg";
 let mainAlt = "my photo";
 let secondMainSrc = "images/models.jpg";
@@ -66,12 +90,12 @@ $(document).ready(() => {
 
 
 DOM.render([
-    <Navbar topics={topics}/>,
-    <MainPhoto src={mainSrc} alt={mainAlt}/>,
-    <About desc1={"A little about me"} desc2={description}/>,
-    <Knowledge technology={techs} />,
-    <Portfolio projects={projects} />,
-    <Footer contacts={contacts} />,
+    <Navbar topics={arrtop}/>,
+    <MainPhoto id={"marki2698"} src={mainSrc} alt={mainAlt}/>,
+    <About id={"about"} desc1={"A little about me"} desc2={description}/>,
+    <Knowledge id={"know"} technology={techs} />,
+    <Portfolio id={"made"} projects={projects} />,
+    <Footer id={"contact"} contacts={contacts} />,
     <Up src={"images/up1.png"} alt={"up-button"}/>/* ,
     <Scripts sources={sources}/> */
 ], document.getElementById("root"));

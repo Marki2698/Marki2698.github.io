@@ -1231,6 +1231,36 @@ var _techs2 = _interopRequireDefault(_techs);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var topics = ["Marki2698", "About me", "What I know", "What I've made", "Contact with me"];
+var mapTop = new Map();
+/* for(let i = 0; i < topics.length; i++) {
+    mapTop.set(topics[i].trim().toLowerCase(), topics[i]);
+} */
+
+//mapTop.forEach((val, key) => val);
+var arrtop = [{
+    href: "marki2698",
+    desc: "Marki2698"
+}, {
+    href: "about",
+    desc: "About me"
+}, {
+    href: "know",
+    desc: "What I know"
+}, {
+    href: "made",
+    desc: "What I've made"
+}, {
+    href: "contact",
+    desc: "Contact with me"
+}];
+mapTop.set("Marki2698", "Marki2698");
+mapTop.set("about", "About me");
+mapTop.set("know", "What I know");
+mapTop.set("made", "What I've made");
+mapTop.set("contact", "Contact with me");
+
+console.log(mapTop);
+
 var mainSrc = "images/models.jpg";
 var mainAlt = "my photo";
 var secondMainSrc = "images/models.jpg";
@@ -1251,8 +1281,8 @@ $(document).ready(function () {
     });
 });
 
-_reactDom2.default.render([_react2.default.createElement(_navbar2.default, { topics: topics }), _react2.default.createElement(_mainphoto2.default, { src: mainSrc, alt: mainAlt }), _react2.default.createElement(_about2.default, { desc1: "A little about me", desc2: description }), _react2.default.createElement(_knowledge2.default, { technology: _techs2.default }), _react2.default.createElement(_portfolio2.default, { projects: _projects2.default }), _react2.default.createElement(_footer2.default, { contacts: _contacts2.default }), _react2.default.createElement(_up2.default, { src: "images/up1.png", alt: "up-button" }) /* ,
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               <Scripts sources={sources}/> */
+_reactDom2.default.render([_react2.default.createElement(_navbar2.default, { topics: arrtop }), _react2.default.createElement(_mainphoto2.default, { id: "marki2698", src: mainSrc, alt: mainAlt }), _react2.default.createElement(_about2.default, { id: "about", desc1: "A little about me", desc2: description }), _react2.default.createElement(_knowledge2.default, { id: "know", technology: _techs2.default }), _react2.default.createElement(_portfolio2.default, { id: "made", projects: _projects2.default }), _react2.default.createElement(_footer2.default, { id: "contact", contacts: _contacts2.default }), _react2.default.createElement(_up2.default, { src: "images/up1.png", alt: "up-button" }) /* ,
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    <Scripts sources={sources}/> */
 ], document.getElementById("root"));
 
 /***/ }),
@@ -18591,9 +18621,18 @@ var Navbar = function (_React$Component) {
 
     _createClass(Navbar, [{
         key: "GoTo",
-        value: function GoTo(e) {
-            e.preventDefault();
-            alert(e.target.innerHTML);
+        value: function GoTo(href) {
+            return function (e) {
+                e.preventDefault();
+                if ($("button.navbar-toggler").css("display") !== "none") {
+                    $("button.navbar-toggler").click();
+                }
+                //e.preventDefault();
+                $("html, body").animate({
+                    scrollTop: $("#" + href + "").offset().top
+                }, 1000);
+                //alert(e.target.innerHTML);
+            };
         }
 
         //webpack-dev-server --hot
@@ -18617,10 +18656,8 @@ var Navbar = function (_React$Component) {
                     _react2.default.createElement(
                         "div",
                         { className: "navbar-nav custom-list" },
-                        this.topics.map(function (topic, i) {
-                            return _react2.default.createElement(_item2.default, { key: i, href: topic, click: function click(e) {
-                                    return _this2.GoTo(e);
-                                } });
+                        this.topics.map(function (val, i) {
+                            return _react2.default.createElement(_item2.default, { key: i, href: val.href, desc: val.desc, click: _this2.GoTo(val.href) });
                         })
                     )
                 )
@@ -18647,7 +18684,7 @@ const Navbar = ({topics}) => <div className="nav-bar">
 </div>; */
 
 Navbar.propTypes = {
-    topics: _propTypes2.default.arrayOf(_propTypes2.default.string)
+    topics: _propTypes2.default.array
 };
 
 Navbar.defaultProps = {
@@ -19296,19 +19333,26 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 var Item = function Item(_ref) {
     var href = _ref.href,
-        click = _ref.click;
+        desc = _ref.desc,
+        _ref$click = _ref.click,
+        click = _ref$click === undefined ? "" : _ref$click;
     return _react2.default.createElement(
         "a",
-        { href: "#" + href, className: "nav-item nav-link navbar-item", onClick: click },
+        { href: "#" + href, className: "nav-item nav-link navbar-item", onClick: typeof click === "string" ? function () {
+                return false;
+            } : function (e) {
+                return click(e);
+            } },
         " ",
-        href,
+        desc,
         " "
     );
 };
 
 Item.propTypes = {
     href: _propTypes2.default.string,
-    click: _propTypes2.default.func
+    desc: _propTypes2.default.string,
+    click: _propTypes2.default.any
 };
 
 Item.defaultProps = {
@@ -19344,21 +19388,24 @@ var _image2 = _interopRequireDefault(_image);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var MainPhoto = function MainPhoto(_ref) {
-    var src = _ref.src,
+    var id = _ref.id,
+        src = _ref.src,
         alt = _ref.alt;
     return _react2.default.createElement(
         "section",
-        { className: "main-photo" },
+        { id: id, className: "main-photo" },
         _react2.default.createElement(_image2.default, { src: src, alt: alt })
     );
 };
 
 MainPhoto.propTypes = {
+    id: _propTypes2.default.string,
     src: _propTypes2.default.string,
     alt: _propTypes2.default.string
 };
 
 MainPhoto.defaultProps = {
+    id: "Marki2698",
     src: "images/me.jpeg",
     alt: "default image"
 };
@@ -19395,11 +19442,12 @@ var _description2 = _interopRequireDefault(_description);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var About = function About(_ref) {
-    var desc1 = _ref.desc1,
+    var id = _ref.id,
+        desc1 = _ref.desc1,
         desc2 = _ref.desc2;
     return _react2.default.createElement(
         "section",
-        { className: "about" },
+        { id: id, className: "about" },
         _react2.default.createElement(_description2.default, { desc: desc1 }),
         _react2.default.createElement(_description2.default, { desc: desc2 })
     );
@@ -19408,6 +19456,7 @@ var About = function About(_ref) {
 About.propTypes = {
     /* src: PropTypes.string,
     alt: PropTypes.string, */
+    id: _propTypes2.default.string,
     desc1: _propTypes2.default.string,
     desc2: _propTypes2.default.string
 };
@@ -19415,6 +19464,7 @@ About.propTypes = {
 About.defaultProps = {
     /* src: "images/semi.jpeg",
     alt: "default image", */
+    id: "about",
     desc1: "default description",
     desc2: "default description"
 };
@@ -19469,6 +19519,7 @@ var Knowledge = function (_React$Component) {
         var _this = _possibleConstructorReturn(this, (Knowledge.__proto__ || Object.getPrototypeOf(Knowledge)).call(this, props));
 
         _this.technology = _this.props.technology;
+        _this.id = _this.props.id;
         //this.index = 1;
         return _this;
     }
@@ -19496,7 +19547,7 @@ var Knowledge = function (_React$Component) {
 
             return _react2.default.createElement(
                 "section",
-                { className: "knowledge" },
+                { id: this.id, className: "knowledge" },
                 this.technology.map(function (val, i) {
                     return _react2.default.createElement(
                         "div",
@@ -19517,7 +19568,8 @@ var Knowledge = function (_React$Component) {
 }(_react2.default.Component);
 
 Knowledge.propTypes = {
-    technology: _propTypes2.default.arrayOf(_propTypes2.default.object)
+    technology: _propTypes2.default.arrayOf(_propTypes2.default.object),
+    id: _propTypes2.default.string
 };
 
 exports.default = Knowledge;
@@ -19558,10 +19610,11 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 // projects = [{src: "src", alt:"alt", href:"href", label:"label", desc:"desc"}]
 
 var Portfolio = function Portfolio(_ref) {
-    var projects = _ref.projects;
+    var id = _ref.id,
+        projects = _ref.projects;
     return _react2.default.createElement(
         "section",
-        { className: "portfolio" },
+        { id: id, className: "portfolio" },
         projects.map(function (val, i) {
             return _react2.default.createElement(
                 "div",
@@ -19575,11 +19628,13 @@ var Portfolio = function Portfolio(_ref) {
 };
 
 Portfolio.propTypes = {
-    projects: _propTypes2.default.array
+    projects: _propTypes2.default.array,
+    id: _propTypes2.default.string
 };
 
 Portfolio.defaultProps = {
-    projects: [{ src: "src", alt: "alt", href: "href", label: "label", desc: "desc" }, { src: "src", alt: "alt", href: "href", label: "label", desc: "desc" }, { src: "src", alt: "alt", href: "href", label: "label", desc: "desc" }]
+    projects: [{ src: "src", alt: "alt", href: "href", label: "label", desc: "desc" }, { src: "src", alt: "alt", href: "href", label: "label", desc: "desc" }, { src: "src", alt: "alt", href: "href", label: "label", desc: "desc" }],
+    id: "portfolio"
 };
 
 exports.default = Portfolio;
@@ -19610,10 +19665,11 @@ var _contact2 = _interopRequireDefault(_contact);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var Footer = function Footer(_ref) {
-    var contacts = _ref.contacts;
+    var id = _ref.id,
+        contacts = _ref.contacts;
     return _react2.default.createElement(
         "footer",
-        { className: "contacts" },
+        { id: id, className: "contacts" },
         contacts.map(function (val, i) {
             return _react2.default.createElement(_contact2.default, { key: i, src: val.src, alt: val.alt, href: val.href, desc: val.desc });
         })
@@ -19621,14 +19677,16 @@ var Footer = function Footer(_ref) {
 };
 
 Footer.propTypes = {
-    contacts: _propTypes2.default.array
+    contacts: _propTypes2.default.array,
+    id: _propTypes2.default.string
 };
 
 Footer.defaultProps = {
     src: "images/facebook.png",
     alt: "facebook",
     href: "https://www.facebook.com/profile.php?id=100011445886587",
-    desc: "My Facebook account"
+    desc: "My Facebook account",
+    id: "contact"
 };
 
 exports.default = Footer;

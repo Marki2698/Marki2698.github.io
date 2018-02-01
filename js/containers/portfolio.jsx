@@ -6,7 +6,7 @@ import Anchor from "../components/anchor.jsx";
 
 // projects = [{src: "src", alt:"alt", href:"href", label:"label", desc:"desc"}]
 
-const Portfolio = ({projects}) => <section className="portfolio">
+const Portfolio = ({id, projects}) => <section id={id} className="portfolio">
     {
         projects.map((val, i) => 
             <div key={i} className="project">
@@ -19,7 +19,8 @@ const Portfolio = ({projects}) => <section className="portfolio">
 </section>;
 
 Portfolio.propTypes = {
-    projects: PropTypes.array
+    projects: PropTypes.array,
+    id: PropTypes.string
 };
 
 Portfolio.defaultProps = {
@@ -27,7 +28,8 @@ Portfolio.defaultProps = {
         {src: "src", alt:"alt", href:"href", label:"label", desc:"desc"},
         {src: "src", alt:"alt", href:"href", label:"label", desc:"desc"},
         {src: "src", alt:"alt", href:"href", label:"label", desc:"desc"}
-    ]
+    ],
+    id: "portfolio"
 };
 
 export default Portfolio;

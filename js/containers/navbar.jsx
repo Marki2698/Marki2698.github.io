@@ -8,9 +8,16 @@ class Navbar extends React.Component {
         this.topics = this.props.topics;
     }
 
-    GoTo(e) {
-        e.preventDefault();
-        alert(e.target.innerHTML);
+    GoTo(href) {
+        return function (e) {
+            e.preventDefault();
+            if($("button.navbar-toggler").css("display") !== "none") {
+                $("button.navbar-toggler").click();
+            }
+            $("html, body").animate({
+                scrollTop: $("#" + href + "").offset().top
+            }, 1000);
+        }
     }
     
     //webpack-dev-server --hot
@@ -24,7 +31,7 @@ class Navbar extends React.Component {
                 <div className="collapse navbar-collapse" id="NavBar">
                     <div className="navbar-nav custom-list">
                     {
-                        this.topics.map((topic, i) => <Item key={i} href={topic} click={(e) => this.GoTo(e)}/> )
+                        this.topics.map((val, i) => <Item key={i} href={val.href} desc={val.desc} click={this.GoTo(val.href)} /> )
                     }
                     </div>
                 </div>
@@ -47,7 +54,7 @@ const Navbar = ({topics}) => <div className="nav-bar">
 </div>; */
 
 Navbar.propTypes = {
-    topics: PropTypes.arrayOf(PropTypes.string)
+    topics: PropTypes.array
 };
 
 Navbar.defaultProps = {

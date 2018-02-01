@@ -9,6 +9,7 @@ class Knowledge extends React.Component {
     constructor(props) {
         super(props);
         this.technology = this.props.technology;
+        this.id = this.props.id;
         //this.index = 1;
     }
     
@@ -29,7 +30,7 @@ class Knowledge extends React.Component {
 
     render() {
         return(
-            <section className="knowledge">
+            <section id={this.id} className="knowledge">
                     {
                         this.technology.map((val, i) => 
                             <div key={i} className="technology" >
@@ -44,7 +45,8 @@ class Knowledge extends React.Component {
 }
 
 Knowledge.propTypes = {
-    technology: PropTypes.arrayOf(PropTypes.object)
+    technology: PropTypes.arrayOf(PropTypes.object),
+    id: PropTypes.string
 };
 
 export default Knowledge;
