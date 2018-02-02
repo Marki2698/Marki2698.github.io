@@ -9071,7 +9071,8 @@ a.text-dark:focus {
 @import "../mixins/_mixins.scss"; */
 
 body {
-  background-color: #e5f3fa;
+  background-color: #262228;
+  color: white;
 }
 
 section:first-child {
@@ -9107,11 +9108,11 @@ footer {
 
 .custom-nav {
   padding: 0;
-  background-color: #005BBB;
+  background-color: #007849;
 }
 
 .custom-list {
-  background-color: #005BBB;
+  background-color: #007849;
   justify-content: space-around;
   padding: 0;
   text-align: center;
@@ -9124,8 +9125,8 @@ footer {
   width: 20%;
   padding: 20px 0px;
   text-decoration-style: none;
-  color: #ffffff;
-  transition: background-color 0.4, color 0.4;
+  color: #f6f6f6;
+  transition: background-color .3s, color .3s;
 }
 
 @media screen and (max-width: 768px) {
@@ -9136,8 +9137,8 @@ footer {
 }
 
 .custom-list .navbar-item:hover {
-  background-color: #000000;
-  color: #ffffff;
+  background-color: #262228;
+  color: white;
 }
 
 .custom-nav-btn {
@@ -9149,7 +9150,6 @@ footer {
 }
 
 .main-photo {
-  background-image: url(5a1310504a051d7ca42eb1c8924b0bf2.png);
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -9161,7 +9161,7 @@ footer {
   margin: 10% 0%;
   border: 10px solid #ffffff;
   border-radius: 50%;
-  box-shadow: #000000 0px 0px 600px 60px;
+  box-shadow: #000000 0px 0px 200px 20px;
 }
 
 .about .desc:first-child {
@@ -9194,8 +9194,10 @@ footer {
 }
 
 .knowledge .technology {
+  background-color: white;
   position: relative;
   width: 15%;
+  border-radius: 100%;
   margin: 2% 8.6%;
   display: inline-block;
 }
@@ -9215,11 +9217,10 @@ footer {
 }
 
 .knowledge .technology .image {
-  cursor: pointer;
   position: relative;
   width: 100%;
   height: inherit;
-  border: 2px solid #ff00ff;
+  border: 5px solid #007849;
   border-radius: 100%;
 }
 
@@ -9248,7 +9249,7 @@ footer {
   position: relative;
   width: 50%;
   left: 25%;
-  border: 5px solid #ffffff;
+  border: 5px solid #007849;
   border-radius: 5%;
 }
 
@@ -9276,11 +9277,16 @@ footer {
   width: 100%;
   left: 0%;
   text-align: center;
-  font-size: 2em;
+  font-size: 1.5em;
   margin: 1% 0%;
-  text-decoration-style: none;
-  color: #000000;
+  text-decoration-line: none;
+  color: white;
   display: block;
+  background-color: #007849;
+  border-radius: 5px;
+  margin: 3% 0% !important;
+  padding: 10px 0px;
+  transition: background-color .3s, color .3s;
 }
 
 @media screen and (max-width: 384px) {
@@ -9288,6 +9294,17 @@ footer {
     font-size: 1em;
     font-weight: bold;
   }
+}
+
+@media screen and (max-width: 384px) {
+  .portfolio .project .anchor {
+    border-radius: 0px;
+  }
+}
+
+.portfolio .project .anchor:hover {
+  background-color: white;
+  color: black;
 }
 
 .portfolio .project .desc {
@@ -9300,14 +9317,14 @@ footer {
 }
 
 .contacts {
-  background-color: black;
+  background-color: #007849;
 }
 
 .contacts .contact {
   position: relative;
   width: 60%;
   left: 20%;
-  padding: 4% 0%;
+  padding: 2% 0%;
 }
 
 @media screen and (max-width: 384px) {
@@ -9319,7 +9336,7 @@ footer {
 
 .contacts .contact .image {
   position: relative;
-  width: 20%;
+  width: 10%;
   display: inline-block;
 }
 
@@ -9328,11 +9345,13 @@ footer {
   width: 70%;
   left: 10%;
   text-align: center;
-  font-size: 2em;
+  font-size: 1.5em;
   margin: 1% 0%;
-  text-decoration-style: none;
+  text-decoration-line: none;
   color: #ffffff;
-  display: inline;
+  display: inline-block;
+  transition: background-color .3s, color .3s;
+  border-radius: 5px;
 }
 
 @media screen and (max-width: 384px) {
@@ -9346,6 +9365,11 @@ footer {
   .contacts .contact .anchor {
     font-size: 14pt;
   }
+}
+
+.contacts .contact .anchor:hover {
+  background-color: white;
+  color: black;
 }
 
 .up-button {

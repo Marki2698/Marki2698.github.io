@@ -3,11 +3,11 @@
 
 .custom-nav {
     padding: 0;
-    background-color: $navbar-bg;
+    background-color: $art-green;
 }
 
 .custom-list {
-    background-color: $navbar-bg;
+    background-color: $art-green;
     justify-content: space-around;
     padding: 0;
     text-align: center;
@@ -20,8 +20,8 @@
     width: 20%;
     padding: 20px 0px;
     text-decoration-style: none;
-    color: $hover-color;
-    transition: background-color $duration, color $duration;
+    color: $ballon-white;
+    transition: background-color .3s, color .3s;
     @media screen and (max-width: 768px) {
         width: 100%;
         text-align: center;
@@ -29,8 +29,8 @@
 }
 
 .custom-list .navbar-item:hover {
-    background-color: $hover-bg;
-    color: $hover-color;
+    background-color: $art-black;
+    color: white;
 }
 
 .custom-nav-btn {

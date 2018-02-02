@@ -1,7 +1,7 @@
 @import "../variables/_variables"; 
 
 .main-photo {
-    background-image: url("images/superman_crop.png");
+    // background-image: url("images/superman_crop.png");
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -13,5 +13,5 @@
     margin: 10% 0%;
     border: 10px solid #ffffff;
     border-radius: 50%;
-    box-shadow: #000000 0px 0px 600px 60px;
+    box-shadow: #000000 0px 0px 200px 20px;
 }

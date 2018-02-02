@@ -19546,8 +19546,6 @@ var Knowledge = function (_React$Component) {
     }, {
         key: "render",
         value: function render() {
-            var _this2 = this;
-
             return _react2.default.createElement(
                 "section",
                 { id: this.id, className: "knowledge" },
@@ -19555,12 +19553,8 @@ var Knowledge = function (_React$Component) {
                     return _react2.default.createElement(
                         "div",
                         { key: i, className: "technology" },
-                        _react2.default.createElement(_image2.default, { listener: function listener(e) {
-                                return _this2.ShowDesc(e);
-                            }, src: val.src, alt: val.alt }),
-                        _react2.default.createElement(_description2.default, { listener: function listener(e) {
-                                return _this2.ShowDesc(e);
-                            }, classname: "hidden", desc: val.desc })
+                        _react2.default.createElement(_image2.default, { listener: "", src: val.src, alt: val.alt }),
+                        _react2.default.createElement(_description2.default, { listener: "", classname: "hidden", desc: val.desc })
                     );
                 })
             );

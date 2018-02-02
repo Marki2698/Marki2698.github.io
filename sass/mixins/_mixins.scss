@@ -1,3 +1,5 @@
+@import "../variables/_variables";
+
 @mixin bodyBG($color) {
     background-color: $color; 
 }
@@ -8,14 +10,14 @@
 }
 
 
-@mixin Anchor($width: 100%, $left: 0%, $block: block, $color: #000000) {
+@mixin Anchor($width: 100%, $left: 0%, $block: block, $color: white) {
     position: relative;
     width: $width;
     left: $left;
     text-align: center;
-    font-size: 2em;
+    font-size: 1.5em;
     margin: 1% 0%;
-    text-decoration-style: none;
+    text-decoration-line: none;
     color: $color;
     display: $block;
     @media screen and (max-width: 384px) {

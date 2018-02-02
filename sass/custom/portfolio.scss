@@ -1,4 +1,5 @@
 @import "../mixins/_mixins";
+@import "../variables/_variables";
 
 .portfolio .project {
     position: relative;
@@ -15,7 +16,7 @@
     position: relative;
     width: 50%;
     left: 25%;
-    border: 5px solid #ffffff;
+    border: 5px solid $art-green;
     border-radius: 5%;
     @media screen and (max-width: 384px){
         width: 60%;
@@ -37,6 +38,19 @@
         font-weight: bold;
     } */
     @include Anchor();
+    @media screen and (max-width: 384px) {
+        border-radius: 0px;
+    }
+    background-color: $art-green;
+    border-radius: 5px;
+    margin: 3% 0%!important;
+    padding: 10px 0px;
+    transition: background-color .3s, color .3s;
+}
+
+.portfolio .project .anchor:hover {
+    background-color: white;
+    color: black;
 }
 
 .portfolio .project .desc {

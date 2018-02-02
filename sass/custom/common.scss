@@ -2,7 +2,8 @@
 @import "../mixins/_mixins.scss";
 
 body {
-    @include bodyBG($bg);
+    @include bodyBG($art-black);
+    color: white;
 }
 
 section:first-child {

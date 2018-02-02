@@ -50,8 +50,8 @@ class Knowledge extends React.Component {
                     {
                         this.technology.map((val, i) => 
                             <div key={i} className="technology" >
-                                <Image listener={(e) => this.ShowDesc(e)} src={val.src} alt={val.alt}/>
-                                <Description listener={(e) => this.ShowDesc(e)} classname={"hidden"} desc={val.desc}/>
+                                <Image listener={""} src={val.src} alt={val.alt}/>
+                                <Description listener={""} classname={"hidden"} desc={val.desc}/>
                             </div>
                         )
                     }
