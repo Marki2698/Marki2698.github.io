@@ -11,7 +11,7 @@ const Portfolio = ({id, projects}) => <section id={id} className="portfolio">
         projects.map((val, i) => 
             <div key={i} className="project">
                 <Image src={val.src} alt={val.alt} />
-                <Anchor href={val.href} label={val.label} />
+                <Anchor href={val.href} label={val.label} target={"_blank"}/>
                 <Description desc={val.desc} />
             </div>
         )

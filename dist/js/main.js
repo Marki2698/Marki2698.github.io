@@ -1149,10 +1149,12 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 var Anchor = function Anchor(_ref) {
     var href = _ref.href,
-        label = _ref.label;
+        label = _ref.label,
+        _ref$target = _ref.target,
+        target = _ref$target === undefined ? "_self" : _ref$target;
     return _react2.default.createElement(
         "a",
-        { href: href, className: "anchor" },
+        { href: href, className: "anchor", target: target },
         label
     );
 };
@@ -19614,7 +19616,7 @@ var Portfolio = function Portfolio(_ref) {
                 "div",
                 { key: i, className: "project" },
                 _react2.default.createElement(_image2.default, { src: val.src, alt: val.alt }),
-                _react2.default.createElement(_anchor2.default, { href: val.href, label: val.label }),
+                _react2.default.createElement(_anchor2.default, { href: val.href, label: val.label, target: "_blank" }),
                 _react2.default.createElement(_description2.default, { desc: val.desc })
             );
         })
