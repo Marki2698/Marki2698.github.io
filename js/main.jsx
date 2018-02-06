@@ -37,41 +37,23 @@ let arrtop = [
     }
 ]
 
-let mainSrc = "images/models.jpg";
+let mainSrc = "images/me.jpg";
 let mainAlt = "my photo";
 let secondMainSrc = "images/models.jpg";
 let secondMainAlt = "my photo";
-let description = `
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-Fusce fringilla est sit amet nulla cursus, vel feugiat mi iaculis. 
-Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae;
-Praesent commodo sapien non tortor imperdiet posuere. 
-Cras sollicitudin metus vitae risus sodales iaculis. 
-Nam cursus metus eget leo bibendum malesuada. Nulla facilisi. 
-In ut nisi et felis scelerisque tincidunt at ac sapien. 
-Vivamus tincidunt urna suscipit nulla tempus vehicula. 
-Ut interdum in ipsum ut pretium. Morbi eros neque, 
-faucibus porta urna vel, gravida tempor augue. 
-Proin viverra quis quam et commodo. Nunc non nisi vitae orci pretium suscipit. 
-In non gravida ante, ut molestie metus.
-Praesent pellentesque enim eu massa feugiat finibus. 
-Nam elementum, eros ac viverra ornare, neque ipsum porta leo, 
-non iaculis tellus massa id leo. Pellentesque sagittis fermentum neque non dictum. 
-Maecenas rutrum ante eget leo tempor commodo. Vestibulum mattis sapien et erat lobortis, 
-sit amet mollis mi iaculis. Cras placerat nec magna vitae efficitur. 
-Nulla at pretium tellus. Quisque non mi auctor, ultricies dolor ornare, semper enim. 
-Praesent sed odio rutrum, porta odio sed, dignissim arcu. 
-Vivamus suscipit ex sed nibh egestas, vitae tempor ante vulputate. 
-Nulla aliquam massa vel mattis cursus. Pellentesque eu diam rutrum, 
-faucibus lacus et, laoreet magna. `;
-//alert("done!");
-
-const sources = [
-    "node_modules/bootstrap/dist/bootstrap.js",
-    "node_modules/tooltip.js/dist/tooltip.js",
-    "node_modules/pooper.js/dist/pooper.js",
-    "node_modules/jquery/dist/jquery.js"
-];
+let description = `Hi, I'm Markiian Lukashiv! I'm hungry student from Lviv, Ukraine.
+As like I said I'm student if precisely from Lviv Polythecnic National University, managment of cybersecurity department.
+When I studied at school I went to martial arts section for six years. It was unforgettable experience =).
+So I'm fit. I also like reading books. My favourite books are : "Ready Player One" by Ernest Klein,
+"The Witcher" series by Andzej Sapkowski, Harry Hole series by Jo Nesbo, "Захар Беркут" by Ivan Franko and "Тигролови" by Ivan Bahriany.
+I like going to the cinema so much. I have a lot of favourite movies.
+My passion is JavaScript. But I also know and like to work with HTML and CSS.
+Perfectly I want to become Full-stack developer. Why? Because I like Node.js and MongoDB as well.
+I'm young and don't know everything, but I want to know, so don't be so critical when you will be reading my code.
+I've opened React.js for me. And it's awesome and on my opinion it's more friendly than 
+Angular 4, maybe because I don't know TypeScript (maybe some day).
+As you see this page hosted on GitHub using Git pages, so I know Git on basic level.
+I have a great way ahead called Full-stack developer.`;
 
 
 // listener for scrolling

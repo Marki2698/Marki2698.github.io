@@ -1249,14 +1249,11 @@ var arrtop = [{
     desc: "Contact with me"
 }];
 
-var mainSrc = "images/models.jpg";
+var mainSrc = "images/me.jpg";
 var mainAlt = "my photo";
 var secondMainSrc = "images/models.jpg";
 var secondMainAlt = "my photo";
-var description = "\nLorem ipsum dolor sit amet, consectetur adipiscing elit. \nFusce fringilla est sit amet nulla cursus, vel feugiat mi iaculis. \nVestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae;\nPraesent commodo sapien non tortor imperdiet posuere. \nCras sollicitudin metus vitae risus sodales iaculis. \nNam cursus metus eget leo bibendum malesuada. Nulla facilisi. \nIn ut nisi et felis scelerisque tincidunt at ac sapien. \nVivamus tincidunt urna suscipit nulla tempus vehicula. \nUt interdum in ipsum ut pretium. Morbi eros neque, \nfaucibus porta urna vel, gravida tempor augue. \nProin viverra quis quam et commodo. Nunc non nisi vitae orci pretium suscipit. \nIn non gravida ante, ut molestie metus.\nPraesent pellentesque enim eu massa feugiat finibus. \nNam elementum, eros ac viverra ornare, neque ipsum porta leo, \nnon iaculis tellus massa id leo. Pellentesque sagittis fermentum neque non dictum. \nMaecenas rutrum ante eget leo tempor commodo. Vestibulum mattis sapien et erat lobortis, \nsit amet mollis mi iaculis. Cras placerat nec magna vitae efficitur. \nNulla at pretium tellus. Quisque non mi auctor, ultricies dolor ornare, semper enim. \nPraesent sed odio rutrum, porta odio sed, dignissim arcu. \nVivamus suscipit ex sed nibh egestas, vitae tempor ante vulputate. \nNulla aliquam massa vel mattis cursus. Pellentesque eu diam rutrum, \nfaucibus lacus et, laoreet magna. ";
-//alert("done!");
-
-var sources = ["node_modules/bootstrap/dist/bootstrap.js", "node_modules/tooltip.js/dist/tooltip.js", "node_modules/pooper.js/dist/pooper.js", "node_modules/jquery/dist/jquery.js"];
+var description = "Hi, I'm Markiian Lukashiv! I'm hungry student from Lviv, Ukraine.\nAs like I said I'm student if precisely from Lviv Polythecnic National University, managment of cybersecurity department.\nWhen I studied at school I went to martial arts section for six years. It was unforgettable experience =).\nSo I'm fit. I also like reading books. My favourite books are : \"Ready Player One\" by Ernest Klein,\n\"The Witcher\" series by Andzej Sapkowski, Harry Hole series by Jo Nesbo, \"\u0417\u0430\u0445\u0430\u0440 \u0411\u0435\u0440\u043A\u0443\u0442\" by Ivan Franko and \"\u0422\u0438\u0433\u0440\u043E\u043B\u043E\u0432\u0438\" by Ivan Bahriany.\nI like going to the cinema so much. I have a lot of favourite movies.\nMy passion is JavaScript. But I also know and like to work with HTML and CSS.\nPerfectly I want to become Full-stack developer. Why? Because I like Node.js and MongoDB as well.\nI'm young and don't know everything, but I want to know, so don't be so critical when you will be reading my code.\nI've opened React.js for me. And it's awesome and on my opinion it's more friendly than \nAngular 4, maybe because I don't know TypeScript (maybe some day).\nAs you see this page hosted on GitHub using Git pages, so I know Git on basic level.\nI have a great way ahead called Full-stack developer.";
 
 // listener for scrolling
 $(document).ready(function () {
