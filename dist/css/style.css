@@ -9246,6 +9246,8 @@ footer {
 }
 
 .portfolio .project .image {
+  background-color: white;
+  color: black;
   position: relative;
   width: 50%;
   left: 25%;
@@ -9279,7 +9281,7 @@ footer {
   text-align: center;
   font-size: 1.5em;
   margin: 1% 0%;
-  text-decoration-line: none;
+  text-decoration: none;
   color: white;
   display: block;
   background-color: #007849;
@@ -9347,7 +9349,7 @@ footer {
   text-align: center;
   font-size: 1.5em;
   margin: 1% 0%;
-  text-decoration-line: none;
+  text-decoration: none;
   color: #ffffff;
   display: inline-block;
   transition: background-color .3s, color .3s;
